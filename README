@@ -1,0 +1,13 @@
+From this video
+https://www.youtube.com/watch?v=4YhVVfxd8rM
+
+So this was a journey of several months.  Lots of learning in wood restoration, bakelite polishing (!), laser cut veneer design, raspberry pi (this is my first project), google home dismantling, python and Node-Red!
+Just wanting to thanks reditors who really made a difference and their posts that got me further:
+- /u/iura_boss for helping me in Node-Red to learn how functions work
+- /u/sf5852 for stopping me from blowing up my RPi by using GPIO's as power source
+- /u/sf5852 for helping me with a startup/shutdown button
+- /u/muffdiv3r for reminding me that I can google things...
+- /u/weirdlabs for telling meI should use RPiinstead of Arduino
+- Dubious Engineering showing mehow to plug a google home to speakers
+And a lot of people on various platforms giving tutorials and help.  The internet is wonderful :)
+
