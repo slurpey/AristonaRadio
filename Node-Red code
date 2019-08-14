@@ -1,0 +1,2188 @@
+[
+    {
+        "id": "eb587436.45cf68",
+        "type": "tab",
+        "label": "Aristona Radio 1961 running on RPi",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "26fcdcfc.a3cd94",
+        "type": "rpi-gpio in",
+        "z": "eb587436.45cf68",
+        "name": "GPIO21 - BlueSwitch",
+        "pin": "40",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "x": 180,
+        "y": 200,
+        "wires": [
+            [
+                "e11a0af0.dcf768"
+            ]
+        ]
+    },
+    {
+        "id": "ab05b179.63af5",
+        "type": "rpi-gpio out",
+        "z": "eb587436.45cf68",
+        "name": "GPIO 17 Blue LED ",
+        "pin": "11",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 990,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7ff237e4.964728",
+        "type": "switch",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 590,
+        "y": 200,
+        "wires": [
+            [
+                "ed6b5273.4c11c"
+            ],
+            [
+                "c4f19cad.0c6ef"
+            ]
+        ]
+    },
+    {
+        "id": "ed6b5273.4c11c",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 180,
+        "wires": [
+            [
+                "611fe5d0.2c54cc"
+            ]
+        ]
+    },
+    {
+        "id": "c4f19cad.0c6ef",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 220,
+        "wires": [
+            [
+                "611fe5d0.2c54cc"
+            ]
+        ]
+    },
+    {
+        "id": "e6aaef9e.79c08",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "BlueSwitch",
+        "func": "flow.set('blue',msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "8a1270e6.3d14d"
+            ]
+        ]
+    },
+    {
+        "id": "e549b38e.4059a",
+        "type": "rpi-gpio in",
+        "z": "eb587436.45cf68",
+        "name": "GPIO27 - RedSwitch",
+        "pin": "13",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "x": 160,
+        "y": 360,
+        "wires": [
+            [
+                "ee96fe26.987ae"
+            ]
+        ]
+    },
+    {
+        "id": "cadfb992.aee8d8",
+        "type": "rpi-gpio out",
+        "z": "eb587436.45cf68",
+        "name": "GPIO 22 Red LED",
+        "pin": "15",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 990,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "9ca264d.aead298",
+        "type": "switch",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 590,
+        "y": 360,
+        "wires": [
+            [
+                "b4b530ef.8ce84"
+            ],
+            [
+                "19f5db9f.871d84"
+            ]
+        ]
+    },
+    {
+        "id": "b4b530ef.8ce84",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 340,
+        "wires": [
+            [
+                "1ce91447.2adf3c"
+            ]
+        ]
+    },
+    {
+        "id": "19f5db9f.871d84",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 380,
+        "wires": [
+            [
+                "1ce91447.2adf3c"
+            ]
+        ]
+    },
+    {
+        "id": "6447d620.2fac88",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "RedSwitch",
+        "func": "flow.set('red',msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 400,
+        "wires": [
+            [
+                "8a1270e6.3d14d"
+            ]
+        ]
+    },
+    {
+        "id": "71eb3099.22b8e",
+        "type": "rpi-gpio in",
+        "z": "eb587436.45cf68",
+        "name": "GPIO25 - GreenSwitch",
+        "pin": "22",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "x": 180,
+        "y": 460,
+        "wires": [
+            [
+                "2224265c.2f86ba"
+            ]
+        ]
+    },
+    {
+        "id": "94b99179.d385d",
+        "type": "rpi-gpio out",
+        "z": "eb587436.45cf68",
+        "name": "GPIO 23 Green LED",
+        "pin": "16",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 1000,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "2e37b797.9c9238",
+        "type": "switch",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 590,
+        "y": 460,
+        "wires": [
+            [
+                "d47e1ede.0c4cd"
+            ],
+            [
+                "a3ccc0b3.665d1"
+            ]
+        ]
+    },
+    {
+        "id": "d47e1ede.0c4cd",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 440,
+        "wires": [
+            [
+                "28fae78.9880c18"
+            ]
+        ]
+    },
+    {
+        "id": "a3ccc0b3.665d1",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 480,
+        "wires": [
+            [
+                "28fae78.9880c18"
+            ]
+        ]
+    },
+    {
+        "id": "95c7abc5.54d508",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "GreenSwitch",
+        "func": "flow.set('green',msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 500,
+        "wires": [
+            [
+                "8a1270e6.3d14d"
+            ]
+        ]
+    },
+    {
+        "id": "1dd5ca58.9f9e36",
+        "type": "rpi-gpio in",
+        "z": "eb587436.45cf68",
+        "name": "GPIO5 - WhiteSwitch",
+        "pin": "29",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "x": 180,
+        "y": 560,
+        "wires": [
+            [
+                "ffe6ec66.a8bda"
+            ]
+        ]
+    },
+    {
+        "id": "68718fc1.5ee32",
+        "type": "rpi-gpio out",
+        "z": "eb587436.45cf68",
+        "name": "GPIO 24 WhiteLED",
+        "pin": "18",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 990,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "9d578681.8ced38",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "White Switch Calculation",
+        "func": "var blue=flow.get('blue') || 0;\nvar red=flow.get('red') || 0;\nvar green=flow.get('green') || 0;\nvar white=flow.get('white') || 0;\nif (blue===1 && red===1 && green===1 && white===1) \n{\n    reallywhite=1;\n}\nelse\n{\n    reallywhite=0;\n}\nmsg.payload=reallywhite;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 560,
+        "wires": [
+            [
+                "1c547a54.d2f0d6"
+            ]
+        ]
+    },
+    {
+        "id": "ddaf7d7e.5e9e4",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "whiteswitch",
+        "func": "flow.set('white',msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 600,
+        "wires": [
+            [
+                "8a1270e6.3d14d",
+                "9d578681.8ced38",
+                "919adf6a.f2d37",
+                "f12eea8a.0ead38"
+            ]
+        ]
+    },
+    {
+        "id": "e09e34f7.77fe38",
+        "type": "rpi-gpio out",
+        "z": "eb587436.45cf68",
+        "name": "GPIO 20 Yellow LED ",
+        "pin": "38",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 980,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8a1270e6.3d14d",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "Yellow Switch Calculation",
+        "func": "var blue=flow.get('blue') || 0;\nvar red=flow.get('red') || 0;\nvar green=flow.get('green') || 0;\nvar white=flow.get('white') || 0;\nif (blue===1 && red===1 && green===1 && white ===0)\n{\n    yellow=1;\n}\nelse\n{\n    yellow=0;\n}\nmsg.payload=yellow;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "1a61c12b.74abef"
+            ]
+        ]
+    },
+    {
+        "id": "ffe6ec66.a8bda",
+        "type": "rbe",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 350,
+        "y": 560,
+        "wires": [
+            [
+                "ddaf7d7e.5e9e4"
+            ]
+        ]
+    },
+    {
+        "id": "e11a0af0.dcf768",
+        "type": "rbe",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "7ff237e4.964728",
+                "e6aaef9e.79c08"
+            ]
+        ]
+    },
+    {
+        "id": "ee96fe26.987ae",
+        "type": "rbe",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 340,
+        "y": 360,
+        "wires": [
+            [
+                "9ca264d.aead298",
+                "6447d620.2fac88"
+            ]
+        ]
+    },
+    {
+        "id": "2224265c.2f86ba",
+        "type": "rbe",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 340,
+        "y": 460,
+        "wires": [
+            [
+                "2e37b797.9c9238",
+                "95c7abc5.54d508"
+            ]
+        ]
+    },
+    {
+        "id": "2872ec80.f441f4",
+        "type": "rpi-gpio in",
+        "z": "eb587436.45cf68",
+        "name": "GPI3 - TopVioletSwitch",
+        "pin": "33",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "x": 180,
+        "y": 640,
+        "wires": [
+            [
+                "60eedea0.a4855"
+            ]
+        ]
+    },
+    {
+        "id": "ada9072b.d7c588",
+        "type": "rpi-gpio in",
+        "z": "eb587436.45cf68",
+        "name": "GPI9 - TopAquaSwitch",
+        "pin": "35",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "x": 180,
+        "y": 720,
+        "wires": [
+            [
+                "f156dbc7.608398"
+            ]
+        ]
+    },
+    {
+        "id": "f156dbc7.608398",
+        "type": "rbe",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 350,
+        "y": 720,
+        "wires": [
+            [
+                "9b079a4.472f568"
+            ]
+        ]
+    },
+    {
+        "id": "60eedea0.a4855",
+        "type": "rbe",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "property": "payload",
+        "x": 350,
+        "y": 640,
+        "wires": [
+            [
+                "429c7c69.110004"
+            ]
+        ]
+    },
+    {
+        "id": "611fe5d0.2c54cc",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "BLUE",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1050,
+        "y": 180,
+        "wires": [
+            [
+                "ab05b179.63af5",
+                "d4a6d59b.249f18"
+            ]
+        ]
+    },
+    {
+        "id": "1a61c12b.74abef",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "YELLOW",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1060,
+        "y": 260,
+        "wires": [
+            [
+                "e09e34f7.77fe38",
+                "d4a6d59b.249f18"
+            ]
+        ]
+    },
+    {
+        "id": "1ce91447.2adf3c",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "RED",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1050,
+        "y": 360,
+        "wires": [
+            [
+                "cadfb992.aee8d8",
+                "d4a6d59b.249f18"
+            ]
+        ]
+    },
+    {
+        "id": "28fae78.9880c18",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "GREEN",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1060,
+        "y": 460,
+        "wires": [
+            [
+                "94b99179.d385d",
+                "d4a6d59b.249f18"
+            ]
+        ]
+    },
+    {
+        "id": "1c547a54.d2f0d6",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "WHITE",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1060,
+        "y": 540,
+        "wires": [
+            [
+                "68718fc1.5ee32",
+                "d4a6d59b.249f18"
+            ]
+        ]
+    },
+    {
+        "id": "429c7c69.110004",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "violetswitch",
+        "func": "flow.set('violet',msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 680,
+        "wires": [
+            [
+                "919adf6a.f2d37"
+            ]
+        ]
+    },
+    {
+        "id": "9b079a4.472f568",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "aquawitch",
+        "func": "flow.set('aqua',msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 760,
+        "wires": [
+            [
+                "f12eea8a.0ead38"
+            ]
+        ]
+    },
+    {
+        "id": "919adf6a.f2d37",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "Violet Switch Calculation",
+        "func": "var blue=flow.get('blue') || 0;\nvar red=flow.get('red') || 0;\nvar green=flow.get('green') || 0;\nvar white=flow.get('white') || 0;\nvar violet=flow.get('violet') || 0;\nif (blue===1 && red===1 && green===1 && white===1 && violet===1) \n{\n    reallyviolet=1;\n}\nelse\n{\n    reallyviolet=0;\n}\nmsg.payload=reallyviolet;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 680,
+        "wires": [
+            [
+                "807008aa.702d68"
+            ]
+        ]
+    },
+    {
+        "id": "f12eea8a.0ead38",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "Aqua Switch Calculation",
+        "func": "var blue=flow.get('blue') || 0;\nvar red=flow.get('red') || 0;\nvar green=flow.get('green') || 0;\nvar white=flow.get('white') || 0;\nvar aqua=flow.get('aqua') || 0;\nif (blue===1 && red===1 && green===1 && white===1 && aqua===1) \n{\n    reallyaqua=1;\n}\nelse\n{\n    reallyaqua=0;\n}\nmsg.payload=reallyaqua;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 760,
+        "wires": [
+            [
+                "5f93a479.590c8c"
+            ]
+        ]
+    },
+    {
+        "id": "807008aa.702d68",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "VIOLET",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1060,
+        "y": 680,
+        "wires": [
+            [
+                "d4a6d59b.249f18"
+            ]
+        ]
+    },
+    {
+        "id": "5f93a479.590c8c",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "AQUA",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1070,
+        "y": 760,
+        "wires": [
+            [
+                "d4a6d59b.249f18"
+            ]
+        ]
+    },
+    {
+        "id": "d4a6d59b.249f18",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "LED Colors",
+        "func": "var blue=flow.get('blue') || 0;\nvar red=flow.get('red') || 0;\nvar green=flow.get('green') || 0;\nvar white=flow.get('white') || 0;\nvar violet=flow.get('violet') || 0;\nvar aqua=flow.get('aqua') || 0;\nif  (blue===1 && red===1 && green===1 && white===1 && aqua===1) \n{\n    color='aqua';\n}\nelse if (blue===1 && red===1 && green===1 && white===1 && violet===1)\n{\n    color='MediumVioletRed';\n}\nelse if (blue===1 && red===1 && green===1 && white===1)\n{\n    color='Azure';\n}\nelse if (blue===1 && red===1 && green===1 && white ===0)\n{\n    color='gold'\n}\nelse if (blue===0)\n{\n    color='blue'\n}\nelse if (red===0)\n{\n    color='red'\n}\nelse\n{\n    color='DarkGreen'\n}\n\nmsg.payload=color;\nflow.set('color',msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1290,
+        "y": 260,
+        "wires": [
+            [
+                "3e96959a.a5b7ea"
+            ]
+        ]
+    },
+    {
+        "id": "7df53aad.a1cea4",
+        "type": "rpi-gpio in",
+        "z": "eb587436.45cf68",
+        "name": "GPIO3 -SCL Shutdown",
+        "pin": "5",
+        "intype": "tri",
+        "debounce": "25",
+        "read": false,
+        "x": 180,
+        "y": 120,
+        "wires": [
+            [
+                "1400f006.b34a4"
+            ]
+        ]
+    },
+    {
+        "id": "273bc9e6.73f616",
+        "type": "exec",
+        "z": "eb587436.45cf68",
+        "command": "sudo poweroff #",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "",
+        "timer": "",
+        "oldrc": false,
+        "name": "turn off Pi",
+        "x": 1380,
+        "y": 1140,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1400f006.b34a4",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "Shutdown",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1360,
+        "y": 980,
+        "wires": [
+            [
+                "d38193ca.fe8b4",
+                "bb01ef47.226f9"
+            ]
+        ]
+    },
+    {
+        "id": "d38193ca.fe8b4",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1380,
+        "y": 1080,
+        "wires": [
+            [
+                "273bc9e6.73f616",
+                "8618ff1a.7cec7"
+            ]
+        ]
+    },
+    {
+        "id": "f73726ad.f64c48",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "LED Strip notes",
+        "info": "Library:\nhttps://flows.nodered.org/node/node-red-node-pi-neopixel\n\nAlso tutorial:\nhttps://randomnerdtutorials.com/node-red-with-ws2812b-addressable-rgb-led-strip/\n\nColors of the LED are standard html names\nhttp://html-color-codes.info/color-names/\n\n",
+        "x": 1800,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5cab9536.2503ac",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "GPIO List & Matrix",
+        "info": "Power\n03: SCL for startup / shutdown\n\nGPIO Switches:\n03: SCL for startup / shutdown\n21: Blue (0 = \"on\")\n27: red  (0 = \"on\")\n27: Green (0 = \"on\")\n05 white (if white=1 + red+Blue+green= 1)\nXX Yellow (if white=0 + red+blue+green=1)\n19 Top violet  (if white=1 + red+Blue+green= 1)+(violet=1)\n19 Top Aqua  (if white=1 + red+Blue+green= 1)+(Aqua=1)\n\nLEDs\n17 : blue\n20: Yellow\n22: red\n23: Green\n24: White\n\nLED Strip\n18: GPIO\n5V: red wire\nGround: Black Wire\n\n",
+        "x": 110,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "29c2105f.6b60c",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Title",
+        "url": "",
+        "contentType": "",
+        "message": "Jacaranda FM",
+        "language": "en",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 970,
+        "y": 1040,
+        "wires": [
+            [
+                "7359a7b6.11fec8"
+            ]
+        ]
+    },
+    {
+        "id": "b914c86f.5e1318",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Radio",
+        "url": "http://edge.iono.fm/xice/jacarandafm_live_medium.mp3",
+        "contentType": "audia/mp3",
+        "message": "",
+        "language": "de",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 970,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7359a7b6.11fec8",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 980,
+        "y": 1100,
+        "wires": [
+            [
+                "b914c86f.5e1318"
+            ]
+        ]
+    },
+    {
+        "id": "e48a9525.783cd8",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Jacaranda",
+        "info": "",
+        "x": 980,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "ac6c7477.d1ade8",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Title",
+        "url": "",
+        "contentType": "",
+        "message": "",
+        "language": "en",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 750,
+        "y": 1040,
+        "wires": [
+            [
+                "2abc1835.8d3f58"
+            ]
+        ]
+    },
+    {
+        "id": "93708d76.30245",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ip",
+                "pt": "msg",
+                "to": "192.168.86.250",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "Radio Magica. Wait about 30 seconds",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "language",
+                "pt": "msg",
+                "to": "En-gb",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 980,
+        "wires": [
+            [
+                "ac6c7477.d1ade8"
+            ]
+        ]
+    },
+    {
+        "id": "c8a67bbc.8f0de8",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Radio",
+        "url": "http://192.173.28.41/MAG_SC",
+        "contentType": "audio/mp3",
+        "message": "",
+        "language": "en",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 750,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2abc1835.8d3f58",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 760,
+        "y": 1100,
+        "wires": [
+            [
+                "c8a67bbc.8f0de8"
+            ]
+        ]
+    },
+    {
+        "id": "1fc78cb0.1bd303",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Magica Peru",
+        "info": "",
+        "x": 770,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "a02fc72b.086248",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Title",
+        "url": "",
+        "contentType": "",
+        "message": "",
+        "language": "",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 530,
+        "y": 1040,
+        "wires": [
+            [
+                "b5c75dc9.ba5ae"
+            ]
+        ]
+    },
+    {
+        "id": "f0187e9f.f0bd",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ip",
+                "pt": "msg",
+                "to": "192.168.86.250",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "Eritrese muziek voor asmeret.  ",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "language",
+                "pt": "msg",
+                "to": "nl-NL",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 980,
+        "wires": [
+            [
+                "a02fc72b.086248"
+            ]
+        ]
+    },
+    {
+        "id": "c6e8d92d.f7a898",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Radio",
+        "url": "http://linuxfreelancer.com:8000/;",
+        "contentType": "aduio/aac",
+        "message": "",
+        "language": "it",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 530,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5c75dc9.ba5ae",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "2.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 550,
+        "y": 1100,
+        "wires": [
+            [
+                "c6e8d92d.f7a898"
+            ]
+        ]
+    },
+    {
+        "id": "b24fb38a.17c47",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Nostalgia Italy",
+        "info": "",
+        "x": 1850,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "7b752afa.801974",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Title",
+        "url": "",
+        "contentType": "",
+        "message": "",
+        "language": "en",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 310,
+        "y": 1040,
+        "wires": [
+            [
+                "c166f65d.fb0b08"
+            ]
+        ]
+    },
+    {
+        "id": "4e27290e.ed82c8",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ip",
+                "pt": "msg",
+                "to": "192.168.86.250",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "Radio Nostalgie. Wait about 30 seconds",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "language",
+                "pt": "msg",
+                "to": "FR",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 980,
+        "wires": [
+            [
+                "7b752afa.801974"
+            ]
+        ]
+    },
+    {
+        "id": "7dbcfc92.600eb4",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Radio",
+        "url": "http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3",
+        "contentType": "mp3",
+        "message": "",
+        "language": "de",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 310,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c166f65d.fb0b08",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 320,
+        "y": 1100,
+        "wires": [
+            [
+                "7dbcfc92.600eb4"
+            ]
+        ]
+    },
+    {
+        "id": "fbd49468.9dc538",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Nostalgie France",
+        "info": "",
+        "x": 340,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "7fe70c8b.2b00a4",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Title",
+        "url": "",
+        "contentType": "",
+        "message": "",
+        "language": "",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 2050,
+        "y": 1040,
+        "wires": [
+            [
+                "d643a1b1.2445f"
+            ]
+        ]
+    },
+    {
+        "id": "20fdbd4a.7bd192",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "Top Buttons Activated.  I will now play Radio Classique Montreal",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "language",
+                "pt": "msg",
+                "to": "en-CA",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2060,
+        "y": 980,
+        "wires": [
+            [
+                "7fe70c8b.2b00a4"
+            ]
+        ]
+    },
+    {
+        "id": "5a93ac0b.b7d0e4",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Radio",
+        "url": "http://stream.statsradio.com:8030/stream",
+        "contentType": "audio/mp3",
+        "message": "",
+        "language": "de",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 2050,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d643a1b1.2445f",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 2070,
+        "y": 1100,
+        "wires": [
+            [
+                "5a93ac0b.b7d0e4"
+            ]
+        ]
+    },
+    {
+        "id": "7cb0bb71.6d6bb4",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Radio Classique",
+        "info": "",
+        "x": 2080,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d4f5757e.5be2e8",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Google Home Notes",
+        "info": "don't forget to set google home as fixed IP\n\nLibrary for Node Red: node-red-contrib-cast\nhttps://flows.nodered.org/node/node-red-contrib-cast",
+        "x": 1170,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "3e96959a.a5b7ea",
+        "type": "debounce",
+        "z": "eb587436.45cf68",
+        "time": 1000,
+        "name": "debounce",
+        "x": 1340,
+        "y": 340,
+        "wires": [
+            [
+                "68ca64a5.5a3abc",
+                "23463d5a.40e2b2"
+            ]
+        ]
+    },
+    {
+        "id": "f70b4ec5.e08cc",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "release next msg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "trigger",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1590,
+        "y": 440,
+        "wires": [
+            [
+                "635dff8d.0b9a2"
+            ]
+        ]
+    },
+    {
+        "id": "cda0b594.2d8748",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "simulate delay in running function",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1780,
+        "y": 500,
+        "wires": [
+            [
+                "f70b4ec5.e08cc",
+                "b81ce167.5ee25"
+            ]
+        ]
+    },
+    {
+        "id": "68ca64a5.5a3abc",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "Blinking Colors",
+        "func": "var color=flow.get('color');\nvar colorstrip =color+\",30\";\nvar white = \"Chocolate,30\"\nvar msg1 = { payload:colorstrip };\nvar msg2 = { payload:white };\nvar msg3 = { payload:colorstrip };\nvar msg4 = { payload:white };\nvar msg5 = { payload:colorstrip };\nreturn [[ msg1, msg2, msg3, msg4, msg5, msg2, msg3, msg4, msg5, msg2, msg3, msg4, msg5 ]];",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1320,
+        "y": 440,
+        "wires": [
+            [
+                "635dff8d.0b9a2"
+            ]
+        ]
+    },
+    {
+        "id": "635dff8d.0b9a2",
+        "type": "simple-queue",
+        "z": "eb587436.45cf68",
+        "name": "queue",
+        "firstMessageBypass": true,
+        "bypassInterval": "30000",
+        "x": 1550,
+        "y": 500,
+        "wires": [
+            [
+                "cda0b594.2d8748"
+            ]
+        ]
+    },
+    {
+        "id": "b81ce167.5ee25",
+        "type": "rpi-neopixels",
+        "z": "eb587436.45cf68",
+        "name": "LED Strip colors",
+        "pixels": "30",
+        "bgnd": "blue",
+        "fgnd": "white",
+        "wipe": "40",
+        "mode": "pixels",
+        "rgb": "rgb",
+        "brightness": "100",
+        "gamma": true,
+        "x": 1740,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "23463d5a.40e2b2",
+        "type": "switch",
+        "z": "eb587436.45cf68",
+        "name": "Buttons",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "blue",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "gold",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "red",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "DarkGreen",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Azure",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "MediumVioletRed",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "aqua",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 7,
+        "x": 1140,
+        "y": 900,
+        "wires": [
+            [
+                "a75d0ca6.afac3"
+            ],
+            [
+                "93708d76.30245"
+            ],
+            [
+                "f0187e9f.f0bd"
+            ],
+            [
+                "4e27290e.ed82c8"
+            ],
+            [
+                "20fdbd4a.7bd192"
+            ],
+            [
+                "da62bc9e.ae9b3"
+            ],
+            [
+                "80d0244d.91f3d8"
+            ]
+        ],
+        "icon": "node-red-contrib-cast/home.png"
+    },
+    {
+        "id": "a75d0ca6.afac3",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ip",
+                "pt": "msg",
+                "to": "192.168.86.250",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "Jacaranda. Wait about 30 seconds",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "language",
+                "pt": "msg",
+                "to": "En-gb",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 980,
+        "wires": [
+            [
+                "29c2105f.6b60c"
+            ]
+        ]
+    },
+    {
+        "id": "8618ff1a.7cec7",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "brightness",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1410,
+        "y": 1200,
+        "wires": [
+            [
+                "b81ce167.5ee25"
+            ]
+        ]
+    },
+    {
+        "id": "78313f04.49ed",
+        "type": "function",
+        "z": "eb587436.45cf68",
+        "name": "Random Station",
+        "func": "\nvar myArray = [\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/fs_radiokoelnchillout/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/antennedus/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/koelnhotmusic/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/ostseewellelive/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radiogalaxy_weiden/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/radiobielefeld/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/radioerft/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/radioeuskirchen/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/radiokoeln/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/radioleverkusen/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/radiorsg/livestream.mp3',\n'http://edge.live.mp3.mdn.newmedia.nacamar.net/radiorur/livestream.mp3',\n'http://vogtlandradio.mp3.green.ch/vogtland_128k_mp3',\n'http://giss.tv:8000/r90.mp3',\n'http://lb.zenfm.be/zenfm.mp3',\n'http://xtrad.io:8080/low.mp3',\n'http://xtrad.io:8080/mid.mp3',\n'http://85.25.217.30/afr64.mp3',\n'http://xtrad.io:8080/high.mp3',\n'http://85.25.217.30/afr128.mp3',\n'http://85.25.43.55:80/hell.mp3',\n'http://live.antenne.at/as?.mp3',\n'http://siar.fm:8000/stream.mp3',\n'http://188.138.9.183/lulufm.mp3',\n'http://37.247.41.45/;stream.mp3',\n'http://37.59.195.28:8214/;?.mp3',\n'http://78.129.224.19/stream.mp3?ipport=78.129.224.19_15769',\n'http://85.25.43.55:80/blues.mp3',\n'http://85.25.43.55:80/white.mp3',\n'http://94.228.133.3/;stream.mp3',\n'http://str.nrjbelgie.be/nrj.mp3',\n'http://stream.ara.lu/stream.mp3.pls',\n'http://stream.quindo.be/low.mp3',\n'https://stream.fro.at/fro64.mp3',\n'http://149.210.223.94/wildfm.mp3',\n'http://188.138.9.183/digital.mp3',\n'http://62.45.183.54:8000/128.mp3',\n'http://62.45.183.54:8000/128.mp3.m3u',\n'http://stream.quindo.be/high.mp3',\n'http://stream.zenfm.be/zenfm.mp3.asx',\n'http://stream.zenfm.be/zenfm.mp3.m3u',\n'http://stream.zenfm.be/zenfm.mp3.ram',\n'http://stream.zenfm.be/zenfm.mp3.xspf',\n'http://stream3.fzo.nu/studio.mp3',\n'http://www.fro.at:8008/fro64.mp3',\n'http://149.255.59.162:8042/;?.mp3',\n'http://178.20.171.156/;stream.mp3',\n'http://185.77.208.153/;stream.mp3',\n'http://195.10.228.6:8016/live.mp3',\n'http://195.10.228.6:8037/live.mp3?type=.mp3/;stream.mp3',\n'http://siar.fm:8000/stream_lo.mp3',\n'http://stream.100p.nl/100pctnl.mp3',\n'http://188.138.9.183/lounge-at.mp3',\n'http://188.94.97.91:80/radio21.mp3',\n'http://85.25.164.44:80/;listen.mp3',\n'http://85.25.209.152:80/berlin.mp3',\n'http://86.91.134.131:8000/live.mp3',\n'http://iradio.iceca.st/i105107.mp3.m3u',\n'http://live.gruen-weiss.at/rgw.mp3',\n'http://player.ffn.de/ffnstream.mp3',\n'http://stream.csrfm.com/stream.mp3',\n'https://stream.m945.de/m945-hq.mp3',\n'http://188.138.9.183/100austria.mp3',\n'http://188.94.97.90:80/rockland.mp3',\n'http://188.94.97.92:80/lnn_96fm.mp3',\n'http://188.94.97.92:80/xmasrock.mp3',\n'http://188.94.97.92:80/xmasrock.mp3',\n'http://217.28.20.20:8001/dunoon.mp3',\n'http://85.25.209.152:80/hot_top.mp3',\n'http://85.25.43.55:80/80er_rock.mp3',\n'http://85.25.43.55:80/90er_rock.mp3',\n'http://85.25.43.55:80/xmas_rock.mp3',\n'http://91.121.103.196:8000/njoy.mp3',\n'http://ice.kultradio.fm/kult128.mp3',\n'http://k69.mine.nu:8000/;stream.mp3',\n'http://live.urkfm.nl:8000/urkfm.mp3',\n'http://radios.rtbf.be/rtbfi-128.mp3',\n'http://raj.krone.at:80/kronehit.mp3?.mp3',\n'http://rs5.stream24.org:8390/;*.mp3',\n'http://stream.xaok.org:8000/frs.mp3',\n'http://stream.xaok.org:8000/frs.mp3.m3u',\n'http://tudno.co.uk:8701/;stream.mp3',\n'http://190.4.191.150:8000/stream.mp3',\n'http://195.55.74.208/urgent/high.mp3',\n'http://37.59.195.28:8210/;stream.mp3',\n'http://91.121.59.45:8145/stream#.mp3',\n'http://94.23.148.11:8312/;stream.mp3',\n'http://94.23.148.11:8386/;stream.mp3',\n'http://94.23.31.72:8000/hitradio.mp3',\n'http://icecast.vrtcdn.be/mnm-mid.mp3',\n'http://live02.rfi.fr/rfimonde-64.mp3',\n'http://raj.krone.at/kronehit-yam.mp3',\n'http://rs33.stream24.net/joke-fm.mp3',\n'http://stream.fantasy.de/fantasy.mp3',\n'http://stream.run.be:8000/run128.mp3',\n'http://studio.omroepn.nl:443/nfm.mp3;',\n'http://www.radiosix.com/radiosix.mp3',\n'https://edge.iono.fm/xice/47_low.mp3',\n'https://edge.iono.fm/xice/47_low.mp3',\n'http://176.31.224.21:8600/;stream.mp3',\n'http://109.235.33.237:8000/omroep.mp3',\n'http://176.31.224.21:8600/;stream.mp3',\n'http://178.20.171.36:8042/;stream.mp3',\n'http://37.97.177.212:8000/;stream.mp3',\n'http://4broadcast.de:8300/;stream.mp3',\n'http://78.129.224.11:6167/;stream.mp3',\n'http://81.18.165.234:8361/;stream.mp3',\n'http://85.214.231.253:8080/stream.mp3',\n'http://85.25.43.55:80/alternative.mp3',\n'http://87.233.180.73:8000/;stream.mp3',\n'http://87.233.180.73:8010/;stream.mp3',\n'http://91.250.82.237:80/nuernberg.mp3',\n'http://cstmn.gr/radio/8030/stream.mp3',\n'http://fhin.4broadcast.de/radioin.mp3',\n'http://icecast.vrtcdn.be/mnm-high.mp3',\n'http://jwmp3.topradio.be/topradio.mp3',\n'http://player.ffn.de/comedystream.mp3',\n'http://raj.krone.at/kronehit-love.mp3',\n'http://stream.ouifm.fr/ouifm-high.mp3',\n'http://studio.omroepn.nl:8090/nfm.mp3',\n'http://webradio.razo.nl:8000/razo.mp3',\n'http://www.flirtfm.ie:8000/stream.mp3.m3u',\n'https://edge.iono.fm/xice/47_high.mp3',\n'https://edge.iono.fm/xice/47_high.mp3',\n'https://radios.rtbf.be/tarmac-128.mp3',\n'https://resource.ffh.de/news/news.mp3 (podcast via site)',\n'https://stream.scoutfm.nl/ScoutFM.mp3',\n'http://7fm2.ice.infomaniak.ch/7fm2.mp3',\n'http://7fm2.ice.infomaniak.ch/7fm2.mp3',\n'http://88.208.208.140:8222/;stream.mp3',\n'http://95.211.190.231:8032/;stream.mp3',\n'http://edge.iono.fm/xice/69_medium.mp3',\n'http://fhin.4broadcast.de/galaxyin.mp3',\n'http://fmradio.hopto.org:7000/live.mp3',\n'http://icecast.vrtcdn.be/klara-mid.mp3',\n'http://live02.rfi.fr/rfiafrique-64.mp3',\n'http://mediam.streamakaci.com/47fm.mp3',\n'http://radionetz.de:8000/purefm-by.mp3',\n'http://radionetz.de:8000/purefm-by.mp3',\n'http://radionetz.de:8000/purefm-by.mp3',\n'http://radionetz.de:8000/purefm-by.mp3',\n'http://radionetz.de:8000/purefm-ff.mp3',\n'http://radionetz.de:8000/purefm-hh.mp3',\n'http://radiostreamserver.de/votefm.mp3',\n'http://raj.krone.at/kronehit-dance.mp3',\n'http://raj.krone.at/kronehit-event.mp3',\n'http://raj.krone.at/kronehit-event.mp3',\n'http://raj.krone.at/kronehit-event.mp3',\n'http://stream.freirad.at:8002/live.mp3',\n'http://stream.vbro.be:9200/elisafm.mp3',\n'http://webstreams.joe.be/live_high.mp3',\n'https://cstmn.gr/radio/8020/mobile.mp3',\n'https://cstmn.gr/radio/8020/stream.mp3',\n'https://cstmn.gr/radio/8050/stream.mp3',\n'https://cstmn.gr/radio/8050/stream.mp3?1552906745',\n'https://cstmn.gr/radio/8050/stream.mp3?nocache=1553180583306',\n'https://radios.rtbf.be/vivabxl-128.mp3',\n'https://streaming.brf.be/brf1-high.mp3',\n'https://streaming.brf.be/brf2-high.mp3',\n'http://195.154.168.210:8032/;stream.mp3',\n'http://109.123.116.202:8018/;stream.mp3',\n'http://188.94.97.91:80/radio21_leer.mp3',\n'http://213.202.241.199:8600/;stream.mp3',\n'http://85.25.43.55:80/rock_classics.mp3',\n'http://icecast.vrtcdn.be/klara-high.mp3',\n'http://icecast.vrtcdn.be/ra2ant-mid.mp3',\n'http://icecast.vrtcdn.be/ra2lim-mid.mp3',\n'http://icecast.vrtcdn.be/ra2ovl-mid.mp3',\n'http://icecast.vrtcdn.be/ra2vlb-mid.mp3',\n'http://icecast.vrtcdn.be/ra2wvl-mid.mp3',\n'http://icecast.vrtcdn.be/radio1-mid.mp3',\n'http://icecast.vrtcdn.be/stubru-mid.mp3',\n'http://radio.arqiva.tv/rnib-connect.mp3',\n'http://radio.wildhitradio.nl/wildfm.mp3',\n'http://radiohostafrancs.cat/directe.mp3',\n'http://radionetz.de:8000/purefm-bln.mp3',\n'http://radiotwenterand.nl:8000/live.mp3',\n'http://raj.krone.at/kronehit-balkan.mp3',\n'http://raj.krone.at/kronehit-charts.mp3',\n'http://raj.krone.at/kronehit-event2.mp3',\n'http://rcf.streamakaci.com/rcfliege.mp3',\n'http://rcf.streamakaci.com/rcfsudbe.mp3',\n'http://rs24.stream24.net/arbeitsmix.mp3?ref=charivari.de',\n'http://shoutcast.movemedia.be/zoefm.mp3',\n'http://stream.bahena.be:8000/bahena.mp3',\n'http://stream.glowfm.nl:8000/glowfm.mp3',\n'https://edge.iono.fm/xice/46_medium.mp3',\n'https://edge.iono.fm/xice/47_medium.mp3',\n'https://edge.iono.fm/xice/47_medium.mp3',\n'https://icecast.omroepvenray.nl/lov.mp3',\n'https://icecast.omroepvenray.nl/lov.mp3.m3u',\n'https://radios.rtbf.be/wr-pure2-128.mp3',\n'http://radio.bobsel.net:8000/;stream.mp3',\n'http://188.94.97.91:80/radio21_celle.mp3',\n'http://188.94.97.91:80/radio21_stade.mp3',\n'http://direct.mouv.fr/live/mouv-lofi.mp3',\n'http://direct.sharp-stream.com/twruk.mp3',\n'http://iceant.antfarm.co.za:8000/HAR.mp3',\n'http://icecast.vrtcdn.be/mnm_urb-mid.mp3',\n'http://icecast.vrtcdn.be/ra2ant-high.mp3',\n'http://icecast.vrtcdn.be/ra2lim-high.mp3',\n'http://icecast.vrtcdn.be/ra2ovl-high.mp3',\n'http://icecast.vrtcdn.be/ra2vlb-high.mp3',\n'http://icecast.vrtcdn.be/ra2wvl-high.mp3',\n'http://icecast.vrtcdn.be/radio1-high.mp3',\n'http://icecast.vrtcdn.be/stubru-high.mp3',\n'http://lb.radioplusgent.be/radioplus.mp3',\n'http://live.radio-vhr.de:80/radiovhr.mp3',\n'http://live.urkfm.nl:8000/geestelijk.mp3',\n'http://mediam.streamakaci.com/goldfm.mp3',\n'http://mfm.ice.infomaniak.ch/mfm-128.mp3',\n'http://mp3.ffh.de/ffhchannels/hq80er.mp3',\n'http://mp3.ffh.de/ffhchannels/hq90er.mp3',\n'http://mp3.ffh.de/ffhchannels/hqrock.mp3',\n'http://mp3.ffh.de/ffhchannels/hqxmas.mp3',\n'http://onair.krone.at/kronehit-italo.mp3',\n'http://plumfm.online.stalig.net/live.mp3',\n'http://radiogfm.dyndns.org:8200/high.mp3',\n'http://radiol.ice.infomaniak.ch/love.mp3',\n'http://radiol.ice.infomaniak.ch/rock.mp3',\n'http://rnb.ice.infomaniak.ch/rnb-128.mp3',\n'http://sc2.radiocaroline.net:10558/;.mp3',\n'http://server.hotrodradio.nl/;stream.mp3',\n'http://shoutcastwidgets.com/ssl/222/.mp3',\n'http://str01.fluidstream.net/fluid06.mp3',\n'http://stream.pride1.de:8000/;stream.mp3',\n'http://streaming.src.fm:8130/;stream.mp3',\n'http://streaming.src.fm:8130/;stream.mp3',\n'http://streams.rpr1.de/rpr-mainz-128.mp3',\n'http://www.clubfmserver.be:8000/roxx.mp3',\n'http://www.meerradio.nl:8000/;stream.mp3',\n'https://live.helsinki.at:8088/live96.mp3',\n'https://radios.rtbf.be/classic21-128.mp3',\n'https://radios.rtbf.be/vivaliege-128.mp3',\n'https://radios.rtbf.be/wr-c21-60-128.mp3',\n'https://radios.rtbf.be/wr-c21-70-128.mp3',\n'https://radios.rtbf.be/wr-c21-80-128.mp3',\n'https://radios.rtbf.be/wr-c21-90-128.mp3',\n'https://radiotwenterand.nl:8844/live.mp3.m3u',\n'https://stream.radiofabrik.at/rf_low.mp3',\n'http://185.52.127.131/be/55563/aac_64.mp3',\n'http://185.52.127.131/be/55567/aac_64.mp3',\n'http://185.52.127.131/be/55569/aac_64.mp3',\n'http://185.52.127.157/be/55565/aac_64.mp3',\n'http://185.52.127.157/be/55570/aac_64.mp3',\n'http://185.52.127.157/be/55572/aac_64.mp3',\n'http://185.52.127.159/be/55564/aac_64.mp3',\n'http://185.52.127.159/be/55566/aac_64.mp3',\n'http://185.52.127.159/be/55568/aac_64.mp3',\n'http://82.217.13.59:8000/AcksRadio-HQ.mp3',\n'http://bata-radio.snt.utwente.nl/high.mp3',\n'http://188.138.9.183/lounge-at-mobile.mp3',\n'http://188.94.97.90:80/rockland_trier.mp3',\n'http://188.94.97.91:80/radio21_aurich.mp3',\n'http://188.94.97.91:80/radio21_bremen.mp3',\n'http://188.94.97.91:80/radio21_goslar.mp3',\n'http://188.94.97.91:80/radio21_lingen.mp3',\n'http://188.94.97.91:80/radio21_uelzen.mp3',\n'http://51.254.131.199:8000/live?type=.mp3/;stream.mp3',\n'http://direct.mouv.fr/live/mouv-midfi.mp3',\n'http://directe.cugat.cat:80/directeHQ.mp3',\n'http://icecast.vrtcdn.be/mnm_hits-mid.mp3',\n'http://icecast.vrtcdn.be/mnm_urb-high.mp3',\n'http://icecast.zuidwestfm.nl/zuidwest.mp3',\n'http://live.canstream.co.uk:8000/awaz.mp3',\n'http://mp3.ffh.de/ffhchannels/hqparty.mp3',\n'http://mp3.ffh.de/ffhchannels/hqtop40.mp3',\n'http://onair.krone.at/kronehit-event2.mp3',\n'http://onair.krone.at/kronehit-event3.mp3',\n'http://onair.krone.at/kronehit-latino.mp3',\n'http://onair-ha1.krone.at/kronehit-hd.mp3',\n'http://player.ffn.de/peppermintstream.mp3',\n'http://raj.krone.at:80/kronehit-fresh.mp3?.mp3',\n'http://stream.fantasy.de/fantasyblack.mp3',\n'http://stream.fantasy.de/fantasydance.mp3',\n'http://stream01.level27.be:80/;stream.mp3',\n'http://stream03.level27.be:80/;stream.mp3',\n'http://streamer.radiocampus.be/stream.mp3.m3u',\n'https://live.helsinki.at:8088/live128.mp3',\n'https://live.helsinki.at:8088/live160.mp3',\n'https://radios.rtbf.be/wr-ouftivi-128.mp3',\n'https://shoutcastwidgets.com/ssl/222/.mp3',\n'https://stream.vlohradio.nl/vlohradio.mp3',\n'http://2.trafficstream.nl/traffic_main.mp3',\n'http://185.52.127.131/be/55153/mp3_128.mp3',\n'http://185.52.127.157/be/34003/mp3_128.mp3',\n'http://185.52.127.157/be/34009/mp3_128.mp3',\n'http://185.52.127.159/be/34017/mp3_128.mp3',\n'http://185.52.127.159/be/34039/mp3_128.mp3',\n'http://185.52.127.159/be/55528/mp3_128.mp3',\n'http://5.135.183.124:8151/stream?type=.mp3/;stream.mp3',\n'http://85.25.43.55:80/2000er_new_metal.mp3',\n'http://buzz.ice.infomaniak.ch/buzz-128.mp3',\n'http://edge.iono.fm/xice/voc_live_high.mp3',\n'http://grk.stream01.level27.be/;stream.mp3',\n'http://icecast.vrtcdn.be/mnm_hits-high.mp3',\n'http://live.canstream.co.uk:8000/unity.mp3',\n'http://media1.hostin.cc/radiodemerstad.mp3',\n'http://mp3.ffh.de/ffhchannels/hqlounge.mp3',\n'http://mp3.ffh.de/ffhchannels/hqvoting.mp3',\n'http://onair.krone.at/kronehit-ghiphop.mp3',\n'http://onair-ha1.krone.at/kronehit-yam.mp3',\n'http://onastream.no-ip.info:8000/live#.mp3',\n'http://radio.canstream.co.uk:8023/live.mp3',\n'http://radio.canstream.co.uk:8025/live.mp3',\n'http://radio.canstream.co.uk:8039/live.mp3?type=.mp3/;stream.mp3',\n'http://radio.canstream.co.uk:8052/live.mp3',\n'http://radio.canstream.co.uk:8052/live.mp3.m3u',\n'http://radio.canstream.co.uk:8097/live.mp3',\n'http://radio.canstream.co.uk:8097/live.mp3.m3u',\n'http://radiol.ice.infomaniak.ch/radiol.mp3',\n'http://rbg.online.radiobreizh.bzh/live.mp3',\n'http://rkb.online.radiobreizh.bzh/live.mp3',\n'http://rockinde.stream.ouifm.fr/ouifm5.mp3',\n'http://rs4.stream24.net:80/unser-radio.mp3',\n'http://www.clubfmserver.be:8000/aktief.mp3',\n'http://www.clubfmserver.be:8000/clubfm.mp3',\n'http://www.clubfmserver.be:8000/expres.mp3',\n'http://www.clubfmserver.be:8000/family.mp3',\n'http://www.clubfmserver.be:8000/family.mp3.m3u',\n'https://radios.rtbf.be/wr-c21-soul-128.mp3',\n'http://188.94.97.90:80/rockland_bitburg.mp3',\n'http://188.94.97.90:80/rockland_koblenz.mp3',\n'http://188.94.97.90:80/rockland_neuwied.mp3',\n'http://188.94.97.91:80/radio21_cuxhaven.mp3',\n'http://188.94.97.91:80/radio21_nienburg.mp3',\n'http://188.94.97.91:80/radio21_walsrode.mp3',\n'http://direct.fipradio.fr/live/fip-lofi.mp3',\n'http://geelfm.dlinkddns.com:8000/geelfm.mp3',\n'http://icy-e-01.sharp-stream.com/obanfm.mp3',\n'http://live.funradio.be/funradiobe-high.mp3',\n'http://mp3.ffh.de/ffhchannels/hqdeutsch.mp3',\n'http://mp3.ffh.de/ffhchannels/hqworkout.mp3',\n'http://mp3.ffh.de/radioffh/hqlivestream.mp3',\n'http://onair-ha1.krone.at/kronehit-love.mp3',\n'http://radiol.ice.infomaniak.ch/country.mp3',\n'http://rcf.streamakaci.com/rcfbruxelles.mp3',\n'http://s3.myradiostream.com:9164/listen.mp3',\n'http://shaincast.caster.fm:22994/listen.mp3?authn60b845bde64e278efdda73a68eda33b6',\n'http://st01.dlf.de/dlf/01/64/mp3/stream.mp3',\n'http://st02.dlf.de/dlf/02/64/mp3/stream.mp3',\n'http://st03.dlf.de/dlf/03/64/mp3/stream.mp3',\n'http://stream.fantasy.de/Fantasy-Lounge.mp3',\n'http://stream01.level27.be:8008/;stream.mp3',\n'http://stream1.deventerradio.nl/;stream.mp3',\n'http://stream2.ujala.nl/stream/2/listen.mp3',\n'http://streams.tantemalkah.at:8000/live.mp3',\n'https://radios.rtbf.be/wr-c21-blues-128.mp3',\n'https://radios.rtbf.be/wr-c21-metal-128.mp3',\n'https://radios.rtbf.be/wr-pure-lazy-128.mp3',\n'https://radios.rtbf.be/wr-tarmac-fr-128.mp3',\n'https://radios.rtbf.be/wr-tarmac-us-128.mp3',\n'https://radios.rtbf.be/wr-viva-xmas-128.mp3',\n'http://2.trafficstream.nl/allsports_main.mp3',\n'http://s22.myradiostream.com:7728/listen.mp3',\n'http://188.94.97.91:80/radio21_buxtehude.mp3',\n'http://188.94.97.91:80/radio21_helmstedt.mp3',\n'http://188.94.97.91:80/radio21_lueneburg.mp3',\n'http://188.94.97.91:80/radio21_oldenburg.mp3',\n'http://188.94.97.91:80/radio21_wolfsburg.mp3',\n'http://20403.live.streamtheworld.com/KFM.mp3',\n'http://85.25.43.55:80/festival_live_rock.mp3',\n'http://alternatif.stream.ouifm.fr/ouifm2.mp3',\n'http://amour.ice.infomaniak.ch/amour-128.mp3',\n'http://direct.fipradio.fr/live/fip-midfi.mp3',\n'http://edge.iono.fm/xice/fmr_live_medium.mp3',\n'http://icecast.vrtcdn.be/ketnetradio-mid.mp3',\n'http://internetradio.salue.de:8000/salue.mp3',\n'http://kerne.online.radiobreizh.bzh/live.mp3',\n'http://live.canstream.co.uk:8000/10radio.mp3',\n'http://live.canstream.co.uk:8000/10radio.mp3.m3u',\n'http://live.radioypsilon.at:85/broadwave.mp3',\n'http://mediam.streamakaci.com/toulousefm.mp3',\n'http://mp3.ffh.de/ffhchannels/hqbrandneu.mp3',\n'http://mp3.ffh.de/ffhchannels/hqschlager.mp3',\n'http://onair-ha1.krone.at/kronehit-anita.mp3',\n'http://onair-ha1.krone.at/kronehit-black.mp3',\n'http://onair-ha1.krone.at/kronehit-dance.mp3',\n'http://onair-ha1.krone.at/kronehit-event.mp3',\n'http://onair-ha1.krone.at/kronehit-event.mp3',\n'http://onair-ha1.krone.at/kronehit-event.mp3',\n'http://onair-ha1.krone.at/kronehit-fresh.mp3',\n'http://onair-ha1.krone.at/kronehit-italo.mp3',\n'http://radiol.ice.infomaniak.ch/schlager.mp3',\n'http://radiostreamserver.de/musicalradio.mp3',\n'http://raj.krone.at/kronehit-interactive.mp3',\n'http://raj.krone.at:80/kronehit-90sdance.mp3?.mp3',\n'http://rs4.stream24.net:80/galaxy-passau.mp3',\n'http://s16.myradiostream.com:9362/listen.mp3',\n'http://st01.dlf.de/dlf/01/128/mp3/stream.mp3',\n'http://st02.dlf.de/dlf/02/128/mp3/stream.mp3',\n'http://st03.dlf.de/dlf/03/128/mp3/stream.mp3',\n'http://stream.deejays.nl:8000/merweradio.mp3',\n'http://stream.deejays.nl:8000/merweradio.mp3.m3u',\n'http://stream.hitradio-rtl.de/HRRTL/xmas.mp3.m3u',\n'http://stream.radioemotion.be:80/;stream.mp3',\n'http://stream.rodney.it/gl8media?format=.mp3',\n'http://stream.rodney.it/gl8media?format=.mp3',\n'https://c6.auracast.net/radio/8040/radio.mp3',\n'http://stream.csrfm.com/stream.aac?type=.mp3/;stream.mp3',\n'http://188.94.97.91:80/radio21_goettingen.mp3',\n'http://188.94.97.91:80/radio21_hildesheim.mp3',\n'http://188.94.97.91:80/radio21_holzminden.mp3',\n'http://188.94.97.91:80/radio21_osnabrueck.mp3',\n'http://antipode.belstream.net/antipode128.mp3',\n'http://classicrock.stream.ouifm.fr/ouifm3.mp3',\n'http://direct.mouv.fr/live/mouvxtra-midfi.mp3',\n'http://icecast.bytesheep.net/zfmzandvoort.mp3',\n'http://icecast.sleutelstad.nl/sleutelstad.mp3',\n'http://icecast.vrtcdn.be/ketnetradio-high.mp3',\n'http://live-bauer-al.sharp-stream.com/cfm.mp3',\n'http://live-bauer-al.sharp-stream.com/key.mp3',\n'http://live-bauer-mz.sharp-stream.com/tfm.mp3',\n'http://lxkdc1.kiestra.com:9049/noos?type=.mp3/;stream.mp3',\n'http://mp3.ffh.de/ffhchannels/hqeurodance.mp3',\n'http://onair-ha1.krone.at/kronehit-balkan.mp3',\n'http://onair-ha1.krone.at/kronehit-charts.mp3',\n'http://onair-ha1.krone.at/kronehit-event2.mp3',\n'http://onair-ha1.krone.at/kronehit-event3.mp3',\n'http://onair-ha1.krone.at/kronehit-event4.mp3',\n'http://onair-ha1.krone.at/kronehit-latino.mp3',\n'http://raj.krone.at/kronehit-greatesthits.mp3',\n'http://rs8.stream24.net/radio-soundportal.mp3',\n'http://s17.myradiostream.com:10938/stream.mp3',\n'http://s39.myradiostream.com:14494/listen.mp3',\n'http://s43.myradiostream.com:20542/listen.mp3',\n'http://server-20.stream-server.nl:8818/;?.mp3',\n'http://str12.fluidstream.net:2310/;stream.mp3',\n'http://stream.hitradio-rtl.de/HRRTL/top40.mp3.m3u',\n'http://stream.studio040.nl:8000/studio040.mp3',\n'http://stream01.iloveradio.de/iloveradio1.mp3',\n'http://stream01.iloveradio.de/iloveradio2.mp3',\n'http://stream01.iloveradio.de/iloveradio3.mp3',\n'http://stream01.iloveradio.de/iloveradio4.mp3',\n'http://stream01.iloveradio.de/iloveradio5.mp3',\n'http://stream01.iloveradio.de/iloveradio6.mp3',\n'http://stream01.iloveradio.de/iloveradio7.mp3',\n'http://stream01.iloveradio.de/iloveradio8.mp3',\n'http://stream01.iloveradio.de/iloveradio9.mp3',\n'http://stream1.icehosting.nl:1073/;stream.mp3',\n'http://stream1.icehosting.nl:8124/;stream.mp3',\n'http://stream1.icehosting.nl:8126/;stream.mp3',\n'http://stream1.icehosting.nl:8126/;stream.mp3',\n'http://stream1.icehosting.nl:8128/;stream.mp3',\n'http://webstream.radioeins.com/radio-eins.mp3',\n'http://www.clubfmserver.be:8000/westradio.mp3',\n'https://radios.rtbf.be/wr-c21-route66-128.mp3',\n'https://radios.rtbf.be/wr-lavieenrose-128.mp3',\n'https://radios.rtbf.be/wr-tarmac-hits-128.mp3',\n'https://secureonair.krone.at/kronehit-yam.mp3',\n'https://stream.rtvparkstad.nl/rtvparkstad.mp3',\n'http://104.155.105.37:8000/;?1446918859326.mp3',\n'http://85.25.243.94:8000/stream_low_autodj.mp3',\n'http://85.25.243.94:8000/stream_low_autodj.mp3',\n'http://89.163.231.60:8104/bcndigitalradio#.mp3',\n'http://ais.absoluteradio.co.uk/absolute00s.mp3',\n'http://ais.absoluteradio.co.uk/absolute60s.mp3',\n'http://ais.absoluteradio.co.uk/absolute70s.mp3',\n'http://ais.absoluteradio.co.uk/absolute80s.mp3',\n'http://ais.absoluteradio.co.uk/absolute90s.mp3',\n'http://icecast.vrtcdn.be/klaracontinuo-mid.mp3',\n'http://jzr-saxo.ice.infomaniak.ch/jzr-saxo.mp3',\n'http://jzr-wr20.ice.infomaniak.ch/jzr-wr20.mp3',\n'http://jzr-wr99.ice.infomaniak.ch/jzr-wr99.mp3',\n'http://live.equinoxenamur.be:8000/Equinoxe.mp3',\n'http://live.radiosbsfm.nl/radiosbsfm?type=.mp3/;stream.mp3',\n'http://live-bauer-al.sharp-stream.com/aire.mp3',\n'http://live-bauer-al.sharp-stream.com/city.mp3',\n'http://live-bauer-al.sharp-stream.com/heat.mp3',\n'http://live-bauer-al.sharp-stream.com/hits.mp3',\n'http://live-bauer-mz.sharp-stream.com/rock.mp3',\n'http://mp3.ffh.de/ffhchannels/hqsoundtrack.mp3',\n'http://mustfm.ice.infomaniak.ch/mustfm-192.mp3',\n'http://onair-ha1.krone.at/kronehit-ghiphop.mp3',\n'http://onair-ha1.krone.at/kronehit-versext.mp3',\n'http://onair-ha1.krone.at/kronehit-vollgas.mp3',\n'http://s13.myradiostream.com:37006/;listen.mp3',\n'http://s17.myradiostream.com:13366/;stream.mp3',\n'http://s17.myradiostream.com:13366/;stream.mp3',\n'http://shoutcast.hostingu2.nl:8000/;stream.mp3',\n'http://shoutcast.ourhouse.fm:8055/;stream1.mp3',\n'http://stream.antenne1.de/80er/livestream2.mp3',\n'http://stream.antenne1.de/90er/livestream2.mp3',\n'http://stream.antenne1.de/a1gp/livestream2.mp3',\n'http://stream.antenne1.de/a1hn/livestream2.mp3',\n'http://stream.antenne1.de/a1pf/livestream2.mp3',\n'http://stream.antenne1.de/a1rt/livestream2.mp3',\n'http://stream.antenne1.de/plus/livestream2.mp3',\n'http://stream.antenne1.de/rock/livestream2.mp3',\n'http://stream.antenne1.de/soft/livestream2.mp3',\n'http://stream.pride1.de:80/PRIDE1_48k_Mono.mp3',\n'http://stream.publimediasvr.be:8000/family.mp3',\n'http://stream.radio7.de/stream1/livestream.mp3',\n'http://stream.radio7.de/stream5/livestream.mp3',\n'http://stream.radio7.de/stream7/livestream.mp3',\n'http://stream.radio7.de/stream9/livestream.mp3',\n'http://stream.shmu.org.uk:8000/shmufm_high.mp3',\n'http://stream01.iloveradio.de/iloveradio10.mp3',\n'http://stream01.iloveradio.de/iloveradio11.mp3',\n'http://stream01.iloveradio.de/iloveradio12.mp3',\n'http://stream01.iloveradio.de/iloveradio13.mp3',\n'http://streamer.radiocampus.be:8000/stream.mp3',\n'http://www.radiodiest.be/mp3_player/diest_.mp3_level.m3u',\n'https://radios.rtbf.be/wr-tarmac-world-128.mp3',\n'https://secureonair.krone.at/kronehit-love.mp3',\n'http:////radiostreamserver.de/votefm-top100.mp3',\n'http://188.94.97.91:80/radio21_braunschweig.mp3',\n'http://dhbelge.ice.infomaniak.ch/dhbelge-96.mp3',\n'http://dhparty.ice.infomaniak.ch/dhparty-96.mp3',\n'http://ganja.stream.ouifm.fr/ouifmganja-128.mp3',\n'http://ga-stream03.pironet-ndh.com:8000/128.mp3',\n'http://icecast.vrtcdn.be/klaracontinuo-high.mp3',\n'http://live-bauer-mz.sharp-stream.com/metro.mp3',\n'http://live-bauer-mz.sharp-stream.com/mfram.mp3',\n'http://live-bauer-mz.sharp-stream.com/mfrfm.mp3',\n'http://live-bauer-mz.sharp-stream.com/tayam.mp3',\n'http://live-bauer-mz.sharp-stream.com/tayfm.mp3',\n'http://onair-ha1.krone.at/kronehit-90sdance.mp3',\n'http://onair-ha1.krone.at/kronehit-clubland.mp3',\n'http://onair-ha1.krone.at/kronehit-electric.mp3',\n'http://onair-ha1.krone.at/kronehit-ukcharts.mp3',\n'http://onair-ha1.krone.at/kronehit-uscharts.mp3',\n'http://rock60s.stream.ouifm.fr/ouifmsixties.mp3',\n'http://stream.antenne1.de/a1stg/livestream2.mp3',\n'http://stream.antenne1.de/a1stg/livestream2.mp3',\n'http://stream.antenne1.de/album/livestream2.mp3',\n'http://stream.antenne1.de/top40/livestream2.mp3',\n'http://stream.it-facilities.be:9006/;stream.mp3',\n'http://stream.radio7.de/stream12/livestream.mp3',\n'http://stream.vechtdalnl.nl:8000/VechtdalNL.mp3',\n'http://stream01.iloveradio.de/iloveradio103.mp3',\n'http://stream01.iloveradio.de/iloveradio104.mp3',\n'http://stream01.iloveradio.de/iloveradio105.mp3',\n'http://stream01.iloveradio.de/iloveradio108.mp3',\n'http://stream01.iloveradio.de/iloveradio109.mp3',\n'http://streaming.radionomy.com/slow4u?type=.mp3/;stream.mp3',\n'http://streamserv42.digipal.nl:8000/;stream.mp3',\n'http://topweek.stream.ouifm.fr/ouifmtopweek.mp3',\n'http://webstream.euroherz.de/radio-euroherz.mp3',\n'http://www.clubfmserver.be:8000/radioclubfm.mp3',\n'https://70er.radioarabella.de/arabella-70er.mp3',\n'https://80er.radioarabella.de/arabella-80er.mp3',\n'https://90er.radioarabella.de/arabella-90er.mp3',\n'https://radios.rtbf.be/wr-tarmac-island-128.mp3',\n'https://secureonair.krone.at/kronehit-anita.mp3',\n'https://secureonair.krone.at/kronehit-black.mp3',\n'https://secureonair.krone.at/kronehit-dance.mp3',\n'https://secureonair.krone.at/kronehit-event.mp3',\n'https://secureonair.krone.at/kronehit-event.mp3',\n'https://secureonair.krone.at/kronehit-event.mp3',\n'https://secureonair.krone.at/kronehit-italo.mp3',\n'Unity FM: http://icecast.unityfm.nl/unityfm.mp3',\n'Unity NL: http://icecast.unityfm.nl/unitynl.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/34015/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/34039/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55527/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55563/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55564/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55565/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55566/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55567/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55568/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55569/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55570/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/55572/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/56174/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/56175/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/56177/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/56178/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/56179/aac_64.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/56189/aac_64.mp3',\n'http://17873.live.streamtheworld.com/RADIO10.mp3',\n'http://188.94.97.90:80/rockland_ludwigshafen.mp3',\n'http://188.94.97.91:80/radio21_wilhelmshaven.mp3',\n'http://ais.absoluteradio.co.uk/absoluteradio.mp3',\n'http://broadcast.infomaniak.ch/ultrason-high.mp3',\n'http://caster04.streampakket.com:9348/listen.mp3',\n'http://cristina.torontocast.com:8194/;stream.mp3',\n'http://dhradio.ice.infomaniak.ch/dhradio-192.mp3',\n'http://dhradio.ice.infomaniak.ch/dhradio-192.mp3.m3u',\n'http://direct.fipradio.fr/live/fip-webradio1.mp3',\n'http://direct.fipradio.fr/live/fip-webradio2.mp3',\n'http://direct.fipradio.fr/live/fip-webradio3.mp3',\n'http://direct.fipradio.fr/live/fip-webradio4.mp3',\n'http://direct.fipradio.fr/live/fip-webradio5.mp3',\n'http://direct.fipradio.fr/live/fip-webradio6.mp3',\n'http://direct.fipradio.fr/live/fip-webradio8.mp3',\n'http://direct.francebleu.fr/live/fb1071-lofi.mp3',\n'http://direct.francebleu.fr/live/fbazur-lofi.mp3',\n'http://direct.francebleu.fr/live/fbnord-lofi.mp3',\n'http://flashfm.ice.infomaniak.ch/flashfm-128.mp3',\n'http://gene-wr05.ice.infomaniak.ch/gene-wr05.mp3',\n'http://gene-wr06.ice.infomaniak.ch/gene-wr06.mp3',\n'http://gene-wr07.ice.infomaniak.ch/gene-wr07.mp3',\n'http://gene-wr08.ice.infomaniak.ch/gene-wr08.mp3',\n'http://gene-wr09.ice.infomaniak.ch/gene-wr09.mp3',\n'http://gene-wr10.ice.infomaniak.ch/gene-wr10.mp3',\n'http://gene-wr11.ice.infomaniak.ch/gene-wr11.mp3',\n'http://icecast.commedia.org.uk:8000/takeover.mp3',\n'http://icecast.commedia.org.uk:8000/takeover.mp3.m3u',\n'http://icecast.vrtcdn.be/stubru_tijdloze-mid.mp3',\n'http://jzr-piano.ice.infomaniak.ch/jzr-piano.mp3',\n'http://kissfm.kissfmradio.cires21.com/kissfm.mp3',\n'http://live-bauer-al.sharp-stream.com/clyde1.mp3',\n'http://live-bauer-al.sharp-stream.com/clyde2.mp3',\n'http://live-bauer-al.sharp-stream.com/coolfm.mp3',\n'http://live-bauer-al.sharp-stream.com/forth1.mp3',\n'http://live-bauer-al.sharp-stream.com/forth2.mp3',\n'http://live-bauer-al.sharp-stream.com/gem106.mp3',\n'http://live-bauer-al.sharp-stream.com/hallam.mp3',\n'http://live-bauer-mz.sharp-stream.com/viking.mp3',\n'http://live-bauer-mz.sharp-stream.com/westfm.mp3',\n'http://mfm-thema.ice.infomaniak.ch/mfm-thema.mp3',\n'http://mfmwr-001.ice.infomaniak.ch/mfmwr-001.mp3',\n'http://mfmwr-002.ice.infomaniak.ch/mfmwr-002.mp3',\n'http://mfmwr-003.ice.infomaniak.ch/mfmwr-003.mp3',\n'http://mfmwr-004.ice.infomaniak.ch/mfmwr-004.mp3',\n'http://mfmwr-005.ice.infomaniak.ch/mfmwr-005.mp3',\n'http://mfmwr-006.ice.infomaniak.ch/mfmwr-006.mp3',\n'http://mfmwr-007.ice.infomaniak.ch/mfmwr-007.mp3',\n'http://mfmwr-008.ice.infomaniak.ch/mfmwr-008.mp3',\n'http://mfmwr-009.ice.infomaniak.ch/mfmwr-009.mp3',\n'http://mfmwr-010.ice.infomaniak.ch/mfmwr-010.mp3',\n'http://mfmwr-011.ice.infomaniak.ch/mfmwr-011.mp3',\n'http://mfmwr-012.ice.infomaniak.ch/mfmwr-012.mp3',\n'http://mfmwr-013.ice.infomaniak.ch/mfmwr-013.mp3',\n'http://mfmwr-014.ice.infomaniak.ch/mfmwr-014.mp3',\n'http://mfmwr-015.ice.infomaniak.ch/mfmwr-015.mp3',\n'http://mfmwr-016.ice.infomaniak.ch/mfmwr-016.mp3',\n'http://mfmwr-017.ice.infomaniak.ch/mfmwr-017.mp3',\n'http://mfmwr-018.ice.infomaniak.ch/mfmwr-018.mp3',\n'http://mfmwr-019.ice.infomaniak.ch/mfmwr-019.mp3',\n'http://mfmwr-020.ice.infomaniak.ch/mfmwr-020.mp3',\n'http://mfmwr-021.ice.infomaniak.ch/mfmwr-021.mp3',\n'http://mfmwr-022.ice.infomaniak.ch/mfmwr-022.mp3',\n'http://mfmwr-023.ice.infomaniak.ch/mfmwr-023.mp3',\n'http://mfmwr-025.ice.infomaniak.ch/mfmwr-025.mp3',\n'http://mp3.donau3fm.c.nmdn.net/donau3fm/live.mp3',\n'http://mp3.ffh.de/ffhchannels/hqacoustichits.mp3',\n'http://onair-ha1.krone.at/kronehit-boygroups.mp3',\n'http://onair-ha1.krone.at/kronehit-girlpower.mp3',\n'http://poprock.ice.infomaniak.ch/poprock-128.mp3',\n'http://radiostreamserver.de/wunschradio-60er.mp3',\n'http://radiostreamserver.de/wunschradio-70er.mp3',\n'http://radiostreamserver.de/wunschradio-80er.mp3',\n'http://radiostreamserver.de/wunschradio-90er.mp3',\n'http://rock80s.stream.ouifm.fr/ouifmeighties.mp3',\n'http://rock90s.stream.ouifm.fr/ouifmnineties.mp3',\n'http://stream.pride1.de:80/PRIDE1_96k_Stereo.mp3',\n'http://stream.suon.cf.ac.uk:8000/xpress_high.mp3',\n'http://stream8.considerit.co.uk/kingdomfm128.mp3',\n'http://streaming.radionomy.com/dance4u?type=.mp3/;stream.mp3',\n'https://radios.rtbf.be/wr-tarmac-chillin-128.mp3',\n'https://secureonair.krone.at/kronehit-balkan.mp3',\n'https://secureonair.krone.at/kronehit-charts.mp3',\n'https://secureonair.krone.at/kronehit-event2.mp3',\n'https://secureonair.krone.at/kronehit-event3.mp3',\n'https://secureonair.krone.at/kronehit-event4.mp3',\n'https://secureonair.krone.at/kronehit-latino.mp3',\n'http://cdn.nrjaudio.fm/audio1/fr/30201/aac_64.mp3',\n'http://cdn.nrjaudio.fm/audio1/fr/40041/aac_64.mp3',\n'http://stream12.iloveradio.de/iloveradio1-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio2-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio3-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio4-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio5-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio6-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio7-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio8-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio9-aac.mp3',\n'http://18973.live.streamtheworld.com/RADIO538.mp3',\n'http://19113.live.streamtheworld.com/TLPSTR14.mp3',\n'http://20103.live.streamtheworld.com/SRGSTR08.mp3',\n'http://20103.live.streamtheworld.com/TLPNET04.mp3',\n'http://20103.live.streamtheworld.com/TLPNET08.mp3',\n'http://20103.live.streamtheworld.com/TLPNET15.mp3 http://21223.live.streamtheworld.com/TLPNET15.mp3',\n'http://20103.live.streamtheworld.com/TLPSTR12.mp3',\n'http://20103.live.streamtheworld.com/TLPSTR18.mp3',\n'http://20103.live.streamtheworld.com/TLPSTR20.mp3',\n'http://20133.live.streamtheworld.com/TLPSTR15.mp3',\n'http://20423.live.streamtheworld.com/TLPSTR23.mp3',\n'http://20853.live.streamtheworld.com/TLPSTR24.mp3',\n'http://21223.live.streamtheworld.com/TLPNET01.mp3',\n'http://21223.live.streamtheworld.com/TLPNET04.mp3',\n'http://21223.live.streamtheworld.com/TLPNET05.mp3',\n'http://21223.live.streamtheworld.com/TLPNET06.mp3',\n'http://21223.live.streamtheworld.com/TLPNET08.mp3',\n'http://21223.live.streamtheworld.com/TLPNET09.mp3',\n'http://21223.live.streamtheworld.com/TLPNET10.mp3',\n'http://21223.live.streamtheworld.com/TLPNET11.mp3',\n'http://21223.live.streamtheworld.com/TLPNET12.mp3',\n'http://21223.live.streamtheworld.com/TLPNET14.mp3',\n'http://server-26.stream-server.nl:8614/listen.mp3',\n'https://streams.pinguinradio.com/Aardschok192.mp3',\n'http://18973.live.streamtheworld.com/RADIO509.mp3',\n'http://20723.live.streamtheworld.com/SRGSTR27.mp3',\n'http://21253.live.streamtheworld.com/SRGSTR25.mp3',\n'http://21293.live.streamtheworld.com/SRGSTR26.mp3',\n'http://21303.live.streamtheworld.com/KINK_DNA.mp3',\n'http://acoustic.stream.ouifm.fr/ouifmacoustic.mp3',\n'http://arvorig-fm.online.radiobreizh.bzh/live.mp3',\n'http://cdn.nrjaudio.fm/adwz1/at/36001/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/at/36005/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/at/36005/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/at/55212/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/34007/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/34011/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/34013/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/be/34015/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/de/33013/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/de/33019/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/adwz1/fr/30607/mp3_128.mp3?origine=fluxradios',\n'http://cdn.nrjaudio.fm/adwz1/fr/30611/mp3_128.mp3?origine=fluxradios',\n'http://cdn.nrjaudio.fm/adwz1/fr/55196/mp3_128.mp3?origine=fluxradios',\n'http://cdn.nrjaudio.fm/adwz1/fr/55524/mp3_128.mp3?origine=fluxradios',\n'http://direct.fipradio.fr/live/fipnantes-lofi.mp3',\n'http://direct.francebleu.fr/live/fb1071-midfi.mp3',\n'http://direct.francebleu.fr/live/fbazur-midfi.mp3',\n'http://direct.francebleu.fr/live/fbbearn-lofi.mp3',\n'http://direct.francebleu.fr/live/fbberry-lofi.mp3',\n'http://direct.francebleu.fr/live/fbisere-lofi.mp3',\n'http://direct.francebleu.fr/live/fbmaine-lofi.mp3',\n'http://direct.francebleu.fr/live/fbnord-midfi.mp3',\n'http://emisoras.cadenaser.com:8085/reus?type=.mp3/;stream.mp3',\n'http://icecast.commedia.org.uk:8000/PULSE-STL.mp3',\n'http://icecast.commedia.org.uk:8000/PULSE-STL.mp3.m3u',\n'http://icecast.vrtcdn.be/stubru_tijdloze-high.mp3',\n'http://live-bauer-al.sharp-stream.com/borders.mp3',\n'http://live-bauer-al.sharp-stream.com/free80s.mp3',\n'http://live-bauer-al.sharp-stream.com/kerrang.mp3',\n'http://live-bauer-mz.sharp-stream.com/magicam.mp3',\n'http://live-bauer-mz.sharp-stream.com/wave105.mp3',\n'http://mp3.ffh.de/ffhchannels/hqsummerfeeling.mp3',\n'http://posurnl.nottingham.ac.uk:8080/urn_high.mp3',\n'http://rock2000.stream.ouifm.fr/ouifmrock2000.mp3',\n'http://rock70s.stream.ouifm.fr/ouifmseventies.mp3',\n'http://server2.streamcontrol.eu:20070/;stream.mp3',\n'http://server-23.stream-server.nl:8382/;audio.mp3',\n'http://server-26.stream-server.nl:8606/listen.mp3',\n'http://slowrock.stream.ouifm.fr/ouifmslowrock.mp3',\n'http://streaming.enantena.com:8001/radiovic56.mp3',\n'http://streaming01.ib3radio.com:8000/ib3radio.mp3',\n'http://streams.pinguinradio.com/PinguinPop192.mp3',\n'http://webradio.antennevorarlberg.at:80/00er?.mp3',\n'http://webradio.antennevorarlberg.at:80/90er?.mp3',\n'http://webradio.antennevorarlberg.at:80/hits?.mp3',\n'http://webradio.antennevorarlberg.at:80/live?.mp3',\n'http://webradio.antennevorarlberg.at:80/rock?.mp3',\n'http://webstream.mainwelle.de/radio-mainwelle.mp3',\n'https://secureonair.krone.at/kronehit-ghiphop.mp3',\n'https://secureonair.krone.at/kronehit-versext.mp3',\n'https://secureonair.krone.at/kronehit-vollgas.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30203/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30207/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30213/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30215/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30219/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30227/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30237/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30239/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30241/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30247/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30255/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30261/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30269/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30275/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30283/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30287/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30289/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30295/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30297/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30313/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30317/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30331/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/55648/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56237/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56303/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56311/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56338/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56698/aac_64.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56752/aac_64.mp3',\n'http://stream12.iloveradio.de/iloveradio10-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio11-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio12-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio13-aac.mp3',\n'https://20103.live.streamtheworld.com/TLPNET01.mp3',\n'https://20103.live.streamtheworld.com/TLPNET05.mp3',\n'https://20103.live.streamtheworld.com/TLPNET06.mp3',\n'https://20103.live.streamtheworld.com/TLPNET09.mp3',\n'https://20103.live.streamtheworld.com/TLPNET10.mp3',\n'https://20103.live.streamtheworld.com/TLPNET11.mp3',\n'https://20103.live.streamtheworld.com/TLPNET12.mp3',\n'https://20103.live.streamtheworld.com/TLPNET14.mp3',\n'https://20103.live.streamtheworld.com/TLPNET16.mp3',\n'https://20863.live.streamtheworld.com/TLPSTR22.mp3',\n'https://21233.live.streamtheworld.com/TLPSTR04.mp3',\n'https://21253.live.streamtheworld.com/TLPSTR03.mp3',\n'https://21283.live.streamtheworld.com/TLPSTR02.mp3',\n'http://188.94.97.90:80/rockland_kaiserslautern.mp3',\n'http://20723.live.streamtheworld.com/JOE_THEME.mp3',\n'http://21263.live.streamtheworld.com/CLASSICFM.mp3',\n'http://81.201.157.218/monitoring/rnblivestream.mp3',\n'http://absolutradio.stream24.net/absolut-bella.mp3',\n'http://cdn.nrjaudio.fm/audio1/fr/30201/mp3_128.mp3',\n'http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3?origine=fluxradios http://cdn.nrjaudio.fm/audio1/fr/30601/mp3_128.mp3?origine=frequence-radio',\n'http://direct.fipradio.fr/live/fipnantes-midfi.mp3',\n'http://direct.francebleu.fr/live/fbalsace-lofi.mp3',\n'http://direct.francebleu.fr/live/fbbearn-midfi.mp3',\n'http://direct.francebleu.fr/live/fbberry-midfi.mp3',\n'http://direct.francebleu.fr/live/fbcreuse-lofi.mp3',\n'http://direct.francebleu.fr/live/Fbelsass-lofi.mp3',\n'http://direct.francebleu.fr/live/fbisere-midfi.mp3',\n'http://direct.francebleu.fr/live/fbmaine-midfi.mp3',\n'http://direct.francebleu.fr/live/fbpoitou-lofi.mp3',\n'http://e1-live-mp3-128.scdn.arkena.com/europe1.mp3',\n'http://everything.myftp.org:8000/everything192.mp3',\n'http://everything.myftp.org:8000/everything192.mp3.m3u',\n'http://internetradio.salue.de:8000/classicrock.mp3',\n'http://jazz-thema.ice.infomaniak.ch/jazz-thema.mp3',\n'http://jzr-com-01.ice.infomaniak.ch/jzr-com-01.mp3',\n'http://jzr-sunset.ice.infomaniak.ch/jzr-sunset.mp3',\n'http://jzr-wr19.ice.infomaniak.ch/jzr-wr19-128.mp3',\n'http://lecentrefm.ice.infomaniak.ch/lecentrefm.mp3',\n'http://listen.radioislam.co.za:8080/radioislam.mp3',\n'http://live-bauer-al.sharp-stream.com/citytalk.mp3',\n'http://live-bauer-al.sharp-stream.com/downtown.mp3',\n'http://live-bauer-al.sharp-stream.com/kisstory.mp3',\n'http://live-bauer-mz.sharp-stream.com/magic828.mp3',\n'http://live-bauer-mz.sharp-stream.com/magic999.mp3',\n'http://lloret.frilab.com:8000/novaradiolloret;.mp3',\n'http://mp3.planetradio.de/plrchannels/hqitunes.mp3',\n'http://onair-ha1.krone.at/kronehit-interactive.mp3',\n'http://radio.08-produccions.cat:8000/rvilanova.mp3',\n'http://radioisa.ice.infomaniak.ch/radioisa-128.mp3',\n'http://radiomol.ice.infomaniak.ch/radiomol-192.mp3',\n'http://radiostreamserver.de/wunschradio-2000er.mp3',\n'http://randstad.wirelessbelgie.be:8330/;stream.mp3',\n'http://randstad.wirelessbelgie.be:8334/;stream.mp3',\n'http://server-06.stream-server.nl:8800/;stream.mp3',\n'http://server-07.stream-server.nl:8578/;stream.mp3',\n'http://server-16.stream-server.nl:8926/;stream.mp3',\n'http://server-20.stream-server.nl:8800/;stream.mp3',\n'http://server-23.stream-server.nl:8474/;stream.mp3',\n'http://server-26.stream-server.nl:8686/;stream.mp3',\n'http://server-27.stream-server.nl:8516/;stream.mp3',\n'http://server-28.stream-server.nl:8506/;stream.mp3',\n'http://server-28.stream-server.nl:8660/;stream.mp3',\n'http://streaming.enacast.com:8000/radiobegurHD.mp3',\n'http://urgent.stream.flumotion.com/urgent/high.mp3.m3u',\n'http://webradio.antennevorarlberg.at:80/disco?.mp3',\n'http://webradio.antennevorarlberg.at:80/fresh?.mp3',\n'https://secureonair.krone.at/kronehit-90sdance.mp3',\n'https://secureonair.krone.at/kronehit-electric.mp3',\n'https://secureonair.krone.at/kronehit-ukcharts.mp3',\n'https://secureonair.krone.at/kronehit-uscharts.mp3',\n'https://scdn.nrjaudio.fm/audio1/fr/55507/aac_64.mp3',\n'https://scdn.nrjaudio.fm/audio1/fr/55562/aac_64.mp3',\n'http://stream12.iloveradio.de/iloveradio103-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio104-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio105-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio108-aac.mp3',\n'http://stream12.iloveradio.de/iloveradio109-aac.mp3',\n'http://19993.live.streamtheworld.com/SER_GIRONA.mp3',\n'http://19993.live.streamtheworld.com/SER_LLEIDA.mp3',\n'http://direct.fipradio.fr/live/fipbordeaux-lofi.mp3',\n'http://direct.francebleu.fr/live/fbalsace-midfi.mp3',\n'http://direct.francebleu.fr/live/fbauxerre-lofi.mp3',\n'http://direct.francebleu.fr/live/fbbelfort-lofi.mp3',\n'http://direct.francebleu.fr/live/fbcreuse-midfi.mp3',\n'http://direct.francebleu.fr/live/Fbelsass-midfi.mp3',\n'http://direct.francebleu.fr/live/fbgironde-lofi.mp3',\n'http://direct.francebleu.fr/live/fbherault-lofi.mp3',\n'http://direct.francebleu.fr/live/fbmayenne-lofi.mp3',\n'http://direct.francebleu.fr/live/fborleans-lofi.mp3',\n'http://direct.francebleu.fr/live/fbpoitou-midfi.mp3',\n'http://girlsrock.stream.ouifm.fr/ouifmgirlsrock.mp3',\n'http://icecast.commedia.org.uk:8000/suttonyouth.mp3',\n'http://live-bauer-al.sharp-stream.com/kissfresh.mp3',\n'http://live-bauer-mz.sharp-stream.com/magic1161.mp3',\n'http://live-bauer-mz.sharp-stream.com/magic1170.mp3',\n'http://live-bauer-mz.sharp-stream.com/magic1548.mp3',\n'http://live-bauer-mz.sharp-stream.com/magicsoul.mp3',\n'http://live-bauer-mz.sharp-stream.com/westsound.mp3',\n'http://mp3.planetradio.de/plrchannels/hqtheclub.mp3',\n'http://mp3.topfm.c.nmdn.net/fs_topfm/livestream.mp3',\n'http://onair-ha1.krone.at/kronehit-greatesthits.mp3',\n'http://radiosun.ice.infomaniak.ch/radiosun-high.mp3',\n'http://reprises.ice.infomaniak.ch/reprises-high.mp3',\n'http://rocknfood.stream.ouifm.fr/ouifmrocknfood.mp3',\n'http://rs17.stream24.net/absolut-oldie-classics.mp3',\n'http://server3.lokalradioserver.de:8000/stream2.mp3.m3u',\n'http://stream.shoutcastsolutions.com:8020/radio.mp3',\n'http://streaming.enantena.com:8000/canalblau128.mp3',\n'http://streams.pinguinradio.com/PinguinRadio320.mp3',\n'http://tx.sharp-stream.com/http_live.php?i=1035.mp3',\n'http://tx.sharp-stream.com/http_live.php?i=1075.mp3',\n'http://tx.sharp-stream.com/http_live.php?i=1458.mp3',\n'http://webradio.antennevorarlberg.at:80/lounge?.mp3',\n'http://webradio.antennevorarlberg.at:80/oldies?.mp3',\n'http://webstream.radio-bamberg.de/radio-bamberg.mp3',\n'http://woodstock.stream.ouifm.fr/ouifmwoodstock.mp3',\n'https://latinalove.ice.infomaniak.ch/latinalove.mp3',\n'https://latinawork.ice.infomaniak.ch/latinawork.mp3',\n'https://live.radioarabellakult.de/arabella-kult.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30203/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30207/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30213/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30215/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30219/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30227/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30237/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30239/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30241/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30247/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30255/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30261/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30269/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30275/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30283/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30287/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30289/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30295/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30297/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30313/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30317/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/30331/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/55648/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56237/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56303/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56311/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56338/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56698/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/adwz1/fr/56752/mp3_128.mp3',\n'https://secureonair.krone.at/kronehit-boygroups.mp3',\n'https://secureonair.krone.at/kronehit-girlpower.mp3',\n'https://sunbeach-ice01.epicpalmtree.com/jouwmnl.mp3',\n'https://trendsetter.streamakaci.com/trendsetter.mp3',\n'http://buzzradio.ice.infomaniak.ch/buzzradio-128.mp3',\n'http://direct.fipradio.fr/live/fipbordeaux-midfi.mp3',\n'http://direct.francebleu.fr/live/fbauxerre-midfi.mp3',\n'http://direct.francebleu.fr/live/fbbelfort-midfi.mp3',\n'http://direct.francebleu.fr/live/fbbesancon-lofi.mp3',\n'http://direct.francebleu.fr/live/fbcotentin-lofi.mp3',\n'http://direct.francebleu.fr/live/fbgascogne-lofi.mp3',\n'http://direct.francebleu.fr/live/fbgironde-midfi.mp3',\n'http://direct.francebleu.fr/live/fbherault-midfi.mp3',\n'http://direct.francebleu.fr/live/fblimousin-lofi.mp3',\n'http://direct.francebleu.fr/live/fbmayenne-midfi.mp3',\n'http://direct.francebleu.fr/live/fborleans-midfi.mp3',\n'http://direct.francebleu.fr/live/fbperigord-lofi.mp3',\n'http://direct.francebleu.fr/live/fbpicardie-lofi.mp3',\n'http://direct.francebleu.fr/live/fbprovence-lofi.mp3',\n'http://direct.francebleu.fr/live/fbtoulouse-lofi.mp3',\n'http://direct.francebleu.fr/live/fbtouraine-lofi.mp3',\n'http://direct.francebleu.fr/live/fbvaucluse-lofi.mp3',\n'http://direct.franceinfo.fr/live/franceinfo-lofi.mp3',\n'http://falconradio.stream-server.nl:8926/;stream.mp3',\n'http://glassrock.live-streams.nl:8007/live?type=.mp3',\n'http://jazz-wr01.ice.infomaniak.ch/jazz-wr01-128.mp3',\n'http://jazz-wr02.ice.infomaniak.ch/jazz-wr02-128.mp3',\n'http://jazz-wr03.ice.infomaniak.ch/jazz-wr03-128.mp3',\n'http://jazz-wr04.ice.infomaniak.ch/jazz-wr04-128.mp3',\n'http://jazz-wr05.ice.infomaniak.ch/jazz-wr05-128.mp3',\n'http://jazz-wr06.ice.infomaniak.ch/jazz-wr06-128.mp3',\n'http://jazz-wr07.ice.infomaniak.ch/jazz-wr07-128.mp3',\n'http://jazz-wr08.ice.infomaniak.ch/jazz-wr08-128.mp3',\n'http://jazz-wr09.ice.infomaniak.ch/jazz-wr09-128.mp3',\n'http://jazz-wr10.ice.infomaniak.ch/jazz-wr10-128.mp3',\n'http://jazz-wr12.ice.infomaniak.ch/jazz-wr12-128.mp3',\n'http://jazz-wr14.ice.infomaniak.ch/jazz-wr14-128.mp3',\n'http://jazz-wr14.ice.infomaniak.ch/jazz-wr14-128.mp3',\n'http://jazz-wr15.ice.infomaniak.ch/jazz-wr15-128.mp3',\n'http://jazz-wr16.ice.infomaniak.ch/jazz-wr16-128.mp3',\n'http://jazz-wr17.ice.infomaniak.ch/jazz-wr17-128.mp3',\n'http://jazz-wr18.ice.infomaniak.ch/jazz-wr18-128.mp3',\n'http://live-bauer-mz.sharp-stream.com/magic1152m.mp3',\n'http://live-bauer-mz.sharp-stream.com/magic1152n.mp3',\n'http://live-bauer-mz.sharp-stream.com/planetrock.mp3',\n'http://live-kiss.sharp-stream.com/bauerexternal1.mp3',\n'http://media.rtvnoord.nl/icecast/rtvnoord/radio?.mp3',\n'http://midvliet.shoutcaststream.com:8210/;stream.mp3',\n'http://mp3.news894.c.nmdn.net/news894/livestream.mp3',\n'http://mp3.planetradio.de/plrchannels/hqnightwax.mp3',\n'http://mp3.radiomg.c.nmdn.net/radiomg/livestream.mp3',\n'http://mp3.wellenr.c.nmdn.net/wellenr/livestream.mp3',\n'http://perrinefm.ice.infomaniak.ch/perrinefm-low.mp3',\n'http://planet90.shoutcaststream.com:8280/;stream.mp3',\n'http://radio105.shoutcaststream.com:8060/;stream.mp3',\n'http://radiostreamserver.de/wunschradio-schlager.mp3',\n'http://roa1062fm.ice.infomaniak.ch/roa1062fm-128.mp3',\n'http://stream.antenne1.de/soundtrack/livestream2.mp3',\n'http://stream.levillage.org/canalb?1362308951917.mp3',\n'http://stream02.audisi.nl/kbc-high?1437830316953.mp3',\n'http://streaming.enantena.com:8000/radioblanes56.mp3',\n'http://streaming.enantena.com:8000/radiolaseu128.mp3',\n'http://streaming.enantena.com:8000/radiorapita56.mp3',\n'http://streaming.enantena.com:8000/radiovalls128.mp3',\n'http://streaming.enantena.com:8001/radioblanes56.mp3',\n'http://streams.pinguinradio.com/PinguinPluche192.mp3',\n'http://tx.sharp-stream.com/http_live.php?i=qr967.mp3',\n'http://voix-du-sud.ice.infomaniak.ch/voix-du-sud.mp3',\n'https://scdn.nrjaudio.fm/audio1/fr/55507/mp3_128.mp3',\n'https://scdn.nrjaudio.fm/audio1/fr/55562/mp3_128.mp3',\n'http://20043.live.streamtheworld.com/QMAXIMUMHITS.mp3',\n'http://direct.fipradio.fr/live/fipstrasbourg-lofi.mp3',\n'http://direct.francebleu.fr/live/fbarmorique-lofi.mp3',\n'http://direct.francebleu.fr/live/fbbesancon-midfi.mp3',\n'http://direct.francebleu.fr/live/fbbourgogne-lofi.mp3',\n'http://direct.francebleu.fr/live/fbbreizizel-lofi.mp3',\n'http://direct.francebleu.fr/live/fbchampagne-lofi.mp3',\n'http://direct.francebleu.fr/live/fbcotentin-midfi.mp3',\n'http://direct.francebleu.fr/live/fbgascogne-midfi.mp3',\n'http://direct.francebleu.fr/live/fblimousin-midfi.mp3',\n'http://direct.francebleu.fr/live/fbperigord-midfi.mp3',\n'http://direct.francebleu.fr/live/fbpicardie-midfi.mp3',\n'http://direct.francebleu.fr/live/fbprovence-midfi.mp3',\n'http://direct.francebleu.fr/live/fbstetienne-lofi.mp3',\n'http://direct.francebleu.fr/live/fbtoulouse-midfi.mp3',\n'http://direct.francebleu.fr/live/fbtouraine-midfi.mp3',\n'http://direct.francebleu.fr/live/fbvaucluse-midfi.mp3',\n'http://direct.franceinfo.fr/live/franceinfo-midfi.mp3',\n'http://edge-audio-02-gos1.sharp-stream.com/qrvibe.mp3',\n'http://icy-e-bz-03-gos.sharp-stream.com:8000/tay3.mp3',\n'http://icy-e-bz-03-gos.sharp-stream.com:8000/tay3.mp3.m3u',\n'http://jazzblues.ice.infomaniak.ch/jazzblues-high.mp3',\n'http://jazzradio.ice.infomaniak.ch/jazzradio-high.mp3',\n'http://live-bauer-mz.sharp-stream.com/magicmellow.mp3',\n'http://live-bauer-mz.sharp-stream.com/northsound1.mp3',\n'http://live-bauer-mz.sharp-stream.com/northsound2.mp3',\n'http://mp3.harmonyfm.de/fs_harmonyfm/hqlivestream.mp3',\n'http://mp3.harmonyfm.de/fs_hrmchannels/hqschlager.mp3',\n'http://mp3.planetradio.de/plrchannels/hqoldschool.mp3',\n'http://radio-player.bmr-radio.de/ballermann-radio.mp3',\n'http://stream.omroepwesterkwartier.nl:8000/stream.mp3',\n'http://streaming.enantena.com:8000/alcudiaradio56.mp3',\n'http://streaming.enantena.com:8000/radiobisbal128.mp3',\n'http://streaming.enantena.com:8000/radiobisbal128.mp3',\n'http://streaming.enantena.com:8000/radioblanes128.mp3',\n'http://streaming.enantena.com:8001/radioblanes128.mp3',\n'http://summertime.stream.ouifm.fr/ouifmsummertime.mp3',\n'http://tx.sharp-stream.com/http_live.php?i=obanfm.mp3',\n'http://webradio.antennevorarlberg.at:80/italiana?.mp3',\n'http://webradio.antennevorarlberg.at:80/partymix?.mp3',\n'https://edge.iono.fm/xice/jacarandafm_live_medium.mp3',\n'https://latinasalsa.ice.infomaniak.ch/latinasalsa.mp3',\n'https://media.rtvnoord.nl/icecast/rtvnoord/radio?.mp3',\n'https://tsfjazz.ice.infomaniak.ch:80/tsfjazz-high.mp3',\n'http://streaming.radionomy.com/100-HIT-radio?type=.mp3/;stream.mp3',\n'http://adsi-e-02-boh.sharp-stream.com/galwaybaylow.mp3?device=delicast?.mp3',\n'http://arabelfm.ice.infomaniak.ch/arabelprodcastfm.mp3',\n'http://dancefloor.ice.infomaniak.ch/dancefloor-128.mp3',\n'http://direct.fipradio.fr/live/fipstrasbourg-midfi.mp3',\n'http://direct.francebleu.fr/live/fbarmorique-midfi.mp3',\n'http://direct.francebleu.fr/live/fbbourgogne-midfi.mp3',\n'http://direct.francebleu.fr/live/fbbreizizel-midfi.mp3',\n'http://direct.francebleu.fr/live/fbchampagne-midfi.mp3',\n'http://direct.francebleu.fr/live/fbgardlozere-lofi.mp3',\n'http://direct.francebleu.fr/live/fblarochelle-lofi.mp3',\n'http://direct.francebleu.fr/live/fbloireocean-lofi.mp3',\n'http://direct.francebleu.fr/live/fbpaysbasque-lofi.mp3',\n'http://direct.francebleu.fr/live/fbroussillon-lofi.mp3',\n'http://direct.francebleu.fr/live/fbstetienne-midfi.mp3',\n'http://direct.franceinter.fr/live/franceinter-lofi.mp3',\n'http://edge-audio-02-gos1.sharp-stream.com/qrchill.mp3',\n'http://icy-e-bz-03-gos.sharp-stream.com:8000/tayfm.mp3.m3u/td>',\n'http://live-bauer-al.sharp-stream.com/freecoventry.mp3',\n'http://live-bauer-al.sharp-stream.com/freehereford.mp3',\n'http://live-bauer-mz.sharp-stream.com/magicchilled.mp3',\n'http://mp3.planetradio.de/planetradio/hqlivestream.mp3',\n'http://mp3.planetradio.de/plrchannels/hqblackbeats.mp3',\n'http://mp3.radiowaf.c.nmdn.net/radiowaf/livestream.mp3',\n'http://mp3ad.egofm.c.nmdn.net/egofm_128/livestream.mp3',\n'http://sermoradebre.streaming-pro.com:8043/;stream.mp3',\n'http://streaming.enantena.com:8000/radiopuigreig56.mp3',\n'http://streaming.enantena.com:8001/alpicatradio128.mp3',\n'http://streams.pinguinradio.com/PinguinClassics192.mp3',\n'http://webradio.antennevorarlberg.at:80/lovesongs?.mp3',\n'https://secureonair.krone.at/kronehit-greatesthits.mp3',\n'http://direct.francebleu.fr/live/fbgardlozere-midfi.mp3',\n'http://direct.francebleu.fr/live/fblarochelle-midfi.mp3',\n'http://direct.francebleu.fr/live/fbloireocean-midfi.mp3',\n'http://direct.francebleu.fr/live/fbpaysbasque-midfi.mp3',\n'http://direct.francebleu.fr/live/fbroussillon-midfi.mp3',\n'http://direct.francebleu.fr/live/fbsudlorraine-lofi.mp3',\n'http://direct.franceinter.fr/live/franceinter-midfi.mp3',\n'http://funradiobe.ice.infomaniak.ch/funradiobe-high.mp3',\n'http://icy-e-bl-01-gos.sharp-stream.com:8000/clyde1.mp3.m3u',\n'http://icy-e-bl-01-gos.sharp-stream.com:8000/clyde2.mp3.m3u',\n'http://icy-e-bl-07-boh.sharp-stream.com:8000/forth1.mp3.m3u',\n'http://icy-e-bl-07-boh.sharp-stream.com:8000/forth2.mp3.m3u',\n'http://jazzlounge.ice.infomaniak.ch/jazzlounge-high.mp3',\n'http://mp3ad.gongwb.c.nmdn.net/ps-gongwb/livestream.mp3',\n'http://radiomknord.radiovonhier.de:8000/stream_high.mp3',\n'http://radiomksued.radiovonhier.de:8000/stream_high.mp3',\n'http://shoutcast2.wirelessantwerpen.be:8412/;stream.mp3',\n'http://shoutcast2.wirelessantwerpen.be:8412/;stream.mp3',\n'http://shoutcast2.wirelessantwerpen.be:8414/;stream.mp3',\n'http://shoutcast2.wirelessantwerpen.be:8414/;stream.mp3?1513171143673',\n'http://stream.celticmusicradio.net:8000/celticmusic.mp3',\n'http://stream.landeswelle.de/lwt/mp3-192/web/stream.mp3',\n'http://streaming.enantena.com:8000/radiomontblanc56.mp3',\n'http://streaming.enantena.com:8000/radiovoltrega128.mp3',\n'http://streaming.radionomy.com/Retro-House-Belgium?.mp3',\n'https://latinafiesta.ice.infomaniak.ch/latinafiesta.mp3',\n'http://direct.francebleu.fr/live/fbdromeardeche-lofi.mp3',\n'http://direct.francebleu.fr/live/fblorrainenord-lofi.mp3',\n'http://direct.francebleu.fr/live/fbpaysdesavoie-lofi.mp3',\n'http://direct.francebleu.fr/live/fbsudlorraine-midfi.mp3',\n'http://jzr-events-01.ice.infomaniak.ch/jzr-events-01.mp3',\n'http://live-bauer-al.sharp-stream.com/freebirmingham.mp3',\n'http://live-bauer-al.sharp-stream.com/freeshropshire.mp3',\n'http://mp3.antennenr.c.nmdn.net/antennenr/livestream.mp3',\n'http://radioisapdb.ice.infomaniak.ch/radioisapdb-128.mp3',\n'http://stream.landeswelle.de/lwde/mp3-192/web/stream.mp3',\n'http://stream.landeswelle.de/lwgr/mp3-192/web/stream.mp3',\n'http://streaming.palamoscomunicacio.cat:8112/;listen.mp3',\n'http://streams.pinguinradio.com/PinguinOnTheRocks192.mp3',\n'http://webradio.antennevorarlberg.at:80/christkindl?.mp3',\n'http://webradio.antennevorarlberg.at:80/classicrock?.mp3',\n'https://mediameeting.ice.infomaniak.ch/toulousefm-st.mp3',\n'https://icecast-qmusicnl-cdp.triple-it.nl/Joe_nl_1_96.mp3',\n'http://bluesnrock.stream.ouifm.fr/ouifmbluesnrock-128.mp3',\n'http://direct.francebleu.fr/live/fbdromeardeche-midfi.mp3',\n'http://direct.francebleu.fr/live/fbfrequenzamora-lofi.mp3',\n'http://direct.francebleu.fr/live/fblorrainenord-midfi.mp3',\n'http://direct.francebleu.fr/live/fbpaysdauvergne-lofi.mp3',\n'http://direct.francebleu.fr/live/fbpaysdesavoie-midfi.mp3',\n'http://edge-audio-03-gos2.sharp-stream.com/102touchfm.mp3.m3u',\n'http://icecast-soulshow.cdp.triple-it.nl/soulshow_128.mp3',\n'http://icy-e-bz-03-gos.sharp-stream.com:8000/tayfmlow.mp3',\n'http://johnnyislive.stream.ouifm.fr/ouifmjohnnyislive.mp3',\n'http://live-bauer-al.sharp-stream.com/downtowncountry.mp3',\n'http://livestream.beverland.info:8009/Beverland?type=.mp3/;stream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt180swl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt190swl/livestream.mp3',\n'http://mp3.planetradio.de/fs_planetradio/hqlivestream.mp3',\n'http://mp3ad.egofm.c.nmdn.net/egofmrap_128/livestream.mp3',\n'http://mp3ad.egofm.c.nmdn.net/egofmsun_128/livestream.mp3',\n'http://rockfrancais.stream.ouifm.fr/ouifmrockfrancais.mp3',\n'http://stream.dashitradio.de/alemannia/mp3-128/stream.mp3',\n'http://webradio.antennevorarlberg.at:80/deutschehits?.mp3',\n'http://webradio.antennevorarlberg.at:80/schlagerkult?.mp3',\n'http://webradio.antennevorarlberg.at:80/workout-hits?.mp3',\n'https://austropop.radioarabella.de/arabella-austropop.mp3',\n'https://latinabachata.ice.infomaniak.ch/latinabachata.mp3',\n'https://latinakizomba.ice.infomaniak.ch/latinakizomba.mp3',\n'https://mediameeting.ice.infomaniak.ch/toulousefm-tfc.mp3',\n'http://stream.dashitradio.de/dashitradio/aac-48/stream.mp3',\n'http://direct.francebleu.fr/live/fbbassenormandie-lofi.mp3',\n'http://direct.francebleu.fr/live/fbfrequenzamora-midfi.mp3',\n'http://direct.francebleu.fr/live/fbhautenormandie-lofi.mp3',\n'http://direct.francebleu.fr/live/fbpaysdauvergne-midfi.mp3',\n'http://direct.franceculture.fr/live/franceculture-lofi.mp3',\n'http://direct.francemusique.fr/live/francemusique-lofi.mp3',\n'http://edge-audio-03-gos2.sharp-stream.com/1016touchfm.mp3.m3u',\n'http://edge-event-05-gos1.sharp-stream.com/manxradioam.mp3.m3u',\n'http://edge-event-05-gos1.sharp-stream.com/manxradiofm.mp3.m3u',\n'http://generations-90.ice.infomaniak.ch/generations-90.mp3',\n'http://icy-e-bab-02-gos.sharp-stream.com/absoluteradio.mp3',\n'http://icy-e-bl-01-gos.sharp-stream.com:8000/clyde1low.mp3',\n'http://icy-e-bl-01-gos.sharp-stream.com:8000/clyde2low.mp3',\n'http://icy-e-bl-02-gos.sharp-stream.com:8000/forth1low.mp3',\n'http://icy-e-bz-03-gos.sharp-stream.com:8000/westfmlow.mp3',\n'http://icy-e-bz-03-gos.sharp-stream.com:8000/westfmlow.mp3.m3u',\n'http://live-bauer-al.sharp-stream.com/freeblackcountry.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1funkwl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1kidswl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1rockwl/livestream.mp3',\n'http://mp3ad.egofm.c.nmdn.net/egofmpure_128/livestream.mp3',\n'http://mp3ad.egofm.c.nmdn.net/egofmriff_128/livestream.mp3',\n'http://mp3ad.egofm.c.nmdn.net/egofmsnow_128/livestream.mp3',\n'http://mp3ad.egofm.c.nmdn.net/egofmsoul_128/livestream.mp3',\n'http://radiojudaica.ice.infomaniak.ch/radiojudaica-128.mp3',\n'http://radiokiepenkerlnord.radiovonhier.de/high/stream.mp3',\n'http://radiokiepenkerlsued.radiovonhier.de/high/stream.mp3',\n'http://radiolippewellehamm.radiovonhier.de/high/stream.mp3',\n'http://rrr.sz.xlcdn.com/?account=fmbrussel&file=fmb988.mp3&type=live&service=icecast&protocol=http&port=8000&output=pls',\n'http://streambbr.ir-media-tec.com/80s/mp3-128/web/play.mp3',\n'http://streambbr.ir-media-tec.com/90s/mp3-128/web/play.mp3',\n'http://streambbr.ir-media-tec.com/neu/mp3-128/web/play.mp3',\n'http://streaming.enantena.com:8000/radioarenysdemar128.mp3',\n'http://tx.sharp-stream.com/http_live.php?i=thamesradio.mp3',\n'http://bringthenoise.stream.ouifm.fr/ouifmbringthenoise.mp3',\n'http://direct.francebleu.fr/live/fbbassenormandie-midfi.mp3',\n'http://direct.francebleu.fr/live/fbhautenormandie-midfi.mp3',\n'http://direct.franceculture.fr/live/franceculture-midfi.mp3',\n'http://direct.francemusique.fr/live/francemusique-midfi.mp3',\n'http://generationfm.ice.infomaniak.ch/generationfm-high.mp3',\n'http://hellwegradioost.radiovonhier.de:8000/stream_high.mp3',\n'http://icecast.commedia.org.uk:8000/keithcommunityradio.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/JOEfm_be_70s_128.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/JOEfm_be_80s_128.mp3',\n'http://mp3.antenneac.c.nmdn.net/fs_antenneac/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1blackwl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1dancewl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1relaxwl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1top40wl/livestream.mp3',\n'http://mp3.radiolippe.c.nmdn.net//radiolippe/livestream.mp3',\n'http://mp3ad.egofm.c.nmdn.net/egofmflash_128/livestream.mp3',\n'http://mp3ad.primaton.c.nmdn.net/primaton/livestream4hi.mp3',\n'http://radio-contact.dh-media.net:7000/stream/1/;stream.mp3',\n'http://stream.dashitradio.de/dashitradio/mp3-128/stream.mp3',\n'http://streambbr.ir-media-tec.com/live/mp3-128/web/play.mp3',\n'http://streambbr.ir-media-tec.com/rock/mp3-128/web/play.mp3',\n'http://streamtdy.ir-media-tec.com/cool/mp3-128/web/play.mp3',\n'http://streamtdy.ir-media-tec.com/live/mp3-128/web/play.mp3',\n'http://webstream.radio-plassenburg.de/radio-plassenburg.mp3',\n'http://azuracast.shoutcastsolutions.com/radio/8000/radio.mp3',\n'http://charlekingradio.ice.infomaniak.ch/charlekingradio.mp3',\n'http://dhradio100ete.ice.infomaniak.ch/dhradio100ete-128.mp3',\n'http://edge-audio-02-gos1.sharp-stream.com/qrclassichits.mp3',\n'http://edge-audio-02-gos1.sharp-stream.com/qrclassicrock.mp3',\n'http://generations-jul.ice.infomaniak.ch/generations-jul.mp3',\n'http://generations-njs.ice.infomaniak.ch/generations-njs.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/JOEfm_be_live_128.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/Qmusic_be_live_96.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt12000erwl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1comedywl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1loungewl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1oldieswl/livestream.mp3',\n'http://mp3.radiosiegen.c.nmdn.net/radiosiegen/livestream.mp3',\n'http://mp3ad.gongwb.c.nmdn.net/ps-gongwbstars/livestream.mp3',\n'http://streambbr.ir-media-tec.com/feten/mp3-128/web/play.mp3',\n'http://streambbr.ir-media-tec.com/relax/mp3-128/web/play.mp3',\n'http://streamtdy.ir-media-tec.com/disco/mp3-128/web/play.mp3',\n'http://studiooneasbl.ice.infomaniak.ch/studiooneasbl-128.mp3',\n'https://start-latina.ice.infomaniak.ch/start-latina-high.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/JOEfm_be_t2000_128.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/Qmusic_be_live_128.mp3',\n'http://icy-e-bz-03-gos.sharp-stream.com:8000/westsoundlow.mp3',\n'http://icy-e-bz-03-gos.sharp-stream.com:8000/westsoundlow.mp3.m3u',\n'http://mp3.hitradiort1.c.nmdn.net/rt1deutschwl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1weekendwl/livestream.mp3',\n'http://streambbr.ir-media-tec.com/berlin/mp3-128/web/play.mp3',\n'http://webstream.galaxy-oberfranken.de/galaxy-oberfranken.mp3',\n'https://latinareggaeton.ice.infomaniak.ch/latinareggaeton.mp3',\n'https://weihnachten.radioarabella.de/arabella-weihnachten.mp3',\n'http://download.omroep.nl/nos/radionieuws/nosnieuws_bulalg.mp3',\n'http://caster04.streampakket.com:8862/stream?1557676545698.mp3',\n'http://generation-rohff.ice.infomaniak.ch/generation-rohff.mp3',\n'http://generations-2000.ice.infomaniak.ch/generations-2000.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/Qmusic_be_dance_128.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/hitradiort1wl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1inthemixwl/livestream.mp3',\n'http://mp3.radioherford.c.nmdn.net/radioherford/livestream.mp3',\n'http://nostalgiewaf80.ice.infomaniak.ch/nostalgiewaf80-128.mp3',\n'http://nostalgiewaf90.ice.infomaniak.ch/nostalgiewaf90-128.mp3',\n'http://radiodudelange.ice.infomaniak.ch/radiodudelange-128.mp3',\n'http://radioisavoiron.ice.infomaniak.ch/radioisavoiron-128.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/dein80er/low/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/dein90er/low/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinlove/low/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinrock/low/stream.mp3',\n'http://streambbr.ir-media-tec.com/deutsch/mp3-128/web/play.mp3',\n'http://streamtdy.ir-media-tec.com/softmix/mp3-128/web/play.mp3',\n'https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_live_96.mp3',\n'https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_qlmb_96.mp3',\n'http://br-br1-obb.cast.addradio.de/br/br1/obb/mp3/56/stream.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl:80/Qmusic_be_live_96.mp3',\n'http://jazzblackmusic.ice.infomaniak.ch/jazzblackmusic-high.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1eurodancewl/livestream.mp3',\n'http://mp3.radioneandertal.c.nmdn.net/neandertal/livestream.mp3',\n'http://mp3ad.gongwb.c.nmdn.net/ps-gongwbinthemix/livestream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/dein80er/high/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/dein90er/high/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinevent/low/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinlove/high/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinrock/high/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deintop40/low/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinurban/low/stream.mp3',\n'http://br-br1-obb.cast.addradio.de/br/br1/obb/mp3/128/stream.mp3',\n'http://direct.francemusique.fr/live/francemusiquelajazz-hifi.mp3',\n'http://generations-booba.ice.infomaniak.ch/generations-booba.mp3',\n'http://generations-girls.ice.infomaniak.ch/generations-girls.mp3',\n'http://generations-rgton.ice.infomaniak.ch/generations-rgton.mp3',\n'http://generations-wr001.ice.infomaniak.ch/generations-wr001.mp3',\n'http://generations-wr002.ice.infomaniak.ch/generations-wr002.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/Qmusic_be_qsummer_128.mp3',\n'http://lessentielradio.ice.infomaniak.ch/lessentielradio-128.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1chillhousewl/livestream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1numberoneswl/livestream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinevent/high/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinlounge/low/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deintop40/high/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinurban/high/stream.mp3',\n'http://statslive.infomaniak.ch/playlist/tsfjazz/tsfjazz-high.mp3/playlist.asx',\n'http://statslive.infomaniak.ch/playlist/tsfjazz/tsfjazz-high.mp3/playlist.pls',\n'http://statslive.infomaniak.ch/playlist/tsfjazz/tsfjazz-high.mp3/playlist.qtl',\n'http://statslive.infomaniak.ch/playlist/tsfjazz/tsfjazz-high.mp3/playlist.ram',\n'http://streamtdy.ir-media-tec.com/gutenacht/mp3-128/web/play.mp3',\n'http://studiooneasbl.ice.infomaniak.ch/studiooneasbl-128rout.mp3\"',\n'https://francemaghreb2.ice.infomaniak.ch/francemaghreb2-high.mp3',\n'https://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3',\n'ttp://webradio.radiomonitor.com/stream/CentralFMGold/;stream.mp3',\n'http://br-br2-nord.cast.addradio.de/br/br2/nord/mp3/56/stream.mp3',\n'http://br-br2-sued.cast.addradio.de/br/br2/sued/mp3/56/stream.mp3',\n'http://br-br3-live.cast.addradio.de/br/br3/live/mp3/56/stream.mp3',\n'http://mp3.radiogong963.c.nmdn.net/ps-radiogong963/livestream.mp3',\n'http://mp3ad.charivariwb.c.nmdn.net/ps-charivariwb/livestream.mp3',\n'http://mp3ad.radiob2.c.nmdn.net/fs_radiob2national/livestream.mp3',\n'http://mp3ad.radiob2.c.nmdn.net/fs_radiob2regional/livestream.mp3',\n'http://mp3ad.radiogalaxy.c.nmdn.net/ps-radiogalaxy/livestream.mp3',\n'http://patmos.cdnstream.com:9592/stream/1/?esPlayer&cb=241471.mp3',\n'http://radioen.cast.addradio.de/radioen/simulcast/high/stream.mp3',\n'http://radioisagrenoble.ice.infomaniak.ch/radioisagrenoble-64.mp3',\n'http://radiokw.cast.addradio.de/radiokw/simulcast/high/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinlounge/high/stream.mp3',\n'http://streambbr.ir-media-tec.com/partydance/mp3-128/web/play.mp3',\n'http://streamtdy.ir-media-tec.com/deutschpop/mp3-128/web/play.mp3',\n'https://golden-oldies.radioarabella.de/arabella-golden-oldies.mp3',\n'https://streaming-medialaan-cdp.triple-it.nl/JOEfm_be_70s_128.mp3',\n'https://streaming-medialaan-cdp.triple-it.nl/JOEfm_be_80s_128.mp3',\n'http://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_classics_96.mp3',\n'https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_nonstop_96.mp3',\n'http://br-br2-sued.cast.addradio.de/br/br2/sued/mp3/128/stream.mp3',\n'http://br-br3-live.cast.addradio.de/br/br3/live/mp3/128/stream.mp3',\n'http://generations-wati-b.ice.infomaniak.ch/generations-wati-b.mp3',\n'http://hr-hr1-live.cast.addradio.de/hr/hr1/live/mp3/128/stream.mp3',\n'http://hr-hr2-live.cast.addradio.de/hr/hr2/live/mp3/128/stream.mp3',\n'http://hr-hr3-live.cast.addradio.de/hr/hr3/live/mp3/128/stream.mp3',\n'http://hr-hr4-live.cast.addradio.de/hr/hr4/live/mp3/128/stream.mp3',\n'http://mp3.hitradiort1.c.nmdn.net/rt1powerworkoutwl/livestream.mp3',\n'http://mp3.radiohochstift.c.nmdn.net/radiohochstift/livestream.mp3',\n'http://mp3.radiowuppertal.c.nmdn.net/radiowuppertal/livestream.mp3',\n'http://nostalgiewaf6070.ice.infomaniak.ch/nostalgiewaf6070-128.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinschlager/low/stream.mp3',\n'http://streambbr.ir-media-tec.com/weihnachten/mp3-128/web/play.mp3',\n'http://webradio.radiomonitor.com/stream/CentralFMChart/;stream.mp3',\n'https://statslive.infomaniak.ch/playlist/radiosud/radiosud-128.mp3/playlist.m3u',\n'https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_classics_96.mp3',\n'https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_classics_96.mp3',\n'https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_fouteuur_96.mp3',\n'http://br-br1-nbopf.cast.addradio.de/br/br1/nbopf/mp3/56/stream.mp3',\n'http://br-puls-live.cast.addradio.de/br/puls/live/mp3/56/stream.mp3',\n'http://generationfm-rap.ice.infomaniak.ch/generationfm-rap-high.mp3',\n'http://mp3.radiogong963.c.nmdn.net/ps-radiogongevent/livestream.mp3',\n'http://mp3.radiogong963.c.nmdn.net/ps-radiogongevent/livestream.mp3',\n'http://mp3.radiogong963.c.nmdn.net/ps-radiogongtop50/livestream.mp3',\n'http://mp3ad.radiob2.c.nmdn.net/ps-radiob2regionalmv/livestream.mp3',\n'http://resources.tindleradio.net/stationuploads/preroll/town102.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deinschlager/high/stream.mp3',\n'http://streamtdy.ir-media-tec.com/kinderlieder/mp3-128/web/play.mp3',\n'https://streaming-medialaan-cdp.triple-it.nl/JOEfm_be_t2000_128.mp3',\n'https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_nonstop40_96.mp3',\n'http://br-br1-nbopf.cast.addradio.de/br/br1/nbopf/mp3/128/stream.mp3',\n'http://br-puls-live.cast.addradio.de/br/puls/live/mp3/128/stream.mp3',\n'http://dieneue1077.cast.addradio.de/dieneue1077/80er/high/stream.mp3',\n'http://dieneue1077.cast.addradio.de/dieneue1077/rock/high/stream.mp3',\n'http://direct.francemusique.fr/live/francemusiqueocoramonde-hifi.mp3',\n'http://fhr-chari-nm.cast.addradio.de/fhr/chari/nm/mp3/128/stream.mp3',\n'http://icatfm.ccma.audioemotion.stream.flumotion.com/ccma/icatfm.mp3',\n'http://mp3.radioguetersloh.c.nmdn.net/radioguetersloh/livestream.mp3',\n'http://nostalgiewafextra.ice.infomaniak.ch/nostalgiewafextra-128.mp3',\n'http://nostalgiewafparty.ice.infomaniak.ch/nostalgiewafparty-128.mp3',\n'http://nostalgiewafrocks.ice.infomaniak.ch/nostalgiewafrocks-128.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deindeutschpop/low/stream.mp3',\n'http://wdr-vera-live.icecast.wdr.de/wdr/vera/live/mp3/128/stream.mp3',\n'http://wdr-wdr3-live.icecast.wdr.de/wdr/wdr3/live/mp3/128/stream.mp3',\n'http://wdr-wdr3-live.icecast.wdr.de/wdr/wdr3/live/mp3/256/stream.mp3',\n'http://wdr-wdr4-live.icecast.wdr.de/wdr/wdr4/live/mp3/128/stream.mp3',\n'http://wdr-wdr5-live.icecast.wdr.de/wdr/wdr5/live/mp3/128/stream.mp3',\n'http://wdr-wdr-event.icecast.wdr.de/wdr/wdr/event/mp3/128/stream.mp3',\n'http://webradio.radiomonitor.com/stream/CentralFMCountry/;stream.mp3',\n'https://d3pvma9xb2775h.cloudfront.net/icecast/omropfryslan/radio.mp3',\n'https://streaming-medialaan-cdp.triple-it.nl/Qmusic_be_dance_128.mp3',\n'http://dieneue1077.cast.addradio.de/dieneue1077/oldie/high/stream.mp3',\n'http://icecast-qmusic.cdp.triple-it.nl/Qmusic_be_workalicious_128.mp3',\n'http://mp3.radiogong963.c.nmdn.net/ps-radiogongrelaxed/livestream.mp3',\n'http://radiovest.cast.addradio.de/radiovest/simulcast/high/stream.mp3',\n'http://rnrw.cast.addradio.de/rnrw-0182/deindeutschpop/high/stream.mp3',\n'https://statslive2.infomaniak.ch/playlist/roa1062fm/roa1062fm-128.mp3/playlist.m3u',\n'http://api.spreaker.com/listen/show/77527/episode/latest/shoutcast.mp3?type=.mp3/;stream.mp3',\n'http://fhr-chari-cha.cast.addradio.de/fhr/chari/cha/mp3/128/stream.mp3',\n'http://fhr-chari-keh.cast.addradio.de/fhr/chari/keh/mp3/128/stream.mp3',\n'http://fhr-chari-sad.cast.addradio.de/fhr/chari/sad/mp3/128/stream.mp3',\n'http://generations-rnb-gold.ice.infomaniak.ch/generations-rnb-gold.mp3',\n'http://mp3.radiogong963.c.nmdn.net/ps-radiogongchannel4/livestream.mp3',\n'http://mp3.radiogong963.c.nmdn.net/ps-radiogongchannel5/livestream.mp3',\n'http://mp3ad.radiob2brandneu.c.nmdn.net/radiob2brandneu/livestream.mp3',\n'http://nostalgiewafbelpop.ice.infomaniak.ch/nostalgiewafbelpop-128.mp3',\n'http://nostalgiewafrelax.ice.infomaniak.ch/nostalgiewafrelax-128-0.mp3',\n'http://wdr-1live-live.icecast.wdr.de/wdr/1live/live/mp3/128/stream.mp3',\n'http://wdr-cosmo-live.icecast.wdr.de/wdr/cosmo/live/mp3/128/stream.mp3',\n'http://wdr-cosmo-live.icecast.wdr.de/wdr/cosmo/live/mp3/128/stream.mp3',\n'http://wdr-cosmo-live.icecast.wdr.de/wdr/cosmo/live/mp3/128/stream.mp3',\n'https://streaming-medialaan-cdp.triple-it.nl/Qmusic_be_qsummer_128.mp3',\n'http://br-b5plus-live.cast.addradio.de/br/b5plus/live/mp3/56/stream.mp3',\n'http://br-br1-franken.cast.addradio.de/br/br1/franken/mp3/56/stream.mp3',\n'http://direct.francemusique.fr/live/francemusiqueclassiqueplus-hifi.mp3',\n'http://direct.francemusique.fr/live/francemusiqueeasyclassique-hifi.mp3',\n'http://jazzladiescrooners.ice.infomaniak.ch/jazzladiescrooners-high.mp3',\n'http://mp3.radiowestfalica.c.nmdn.net/ps-radiowestfalica/livestream.mp3',\n'http://mp3ad.radioprimavera.c.nmdn.net/ps-radioprimavera/livestream.mp3',\n'http://mp3ad.radiotrausnitz.c.nmdn.net/ps-radiotrausnitz/livestream.mp3',\n'http://radioessen.cast.addradio.de/radioessen/simulcast/high/stream.mp3',\n'http://radiohagen.cast.addradio.de/radiohagen/simulcast/high/stream.mp3',\n'http://radioherne.cast.addradio.de/radioherne/simulcast/high/stream.mp3',\n'http://streamtdy.ir-media-tec.com/weihnachtslieder/mp3-128/web/play.mp3',\n'http://br-b5plus-live.cast.addradio.de/br/b5plus/live/mp3/128/stream.mp3',\n'http://br-br1-franken.cast.addradio.de/br/br1/franken/mp3/128/stream.mp3',\n'http://catradio.ccma.audioemotion.stream.flumotion.com/ccma/catradio.mp3',\n'http://direct.francemusique.fr/live/francemusiquelacontemporainehifi.mp3',\n'http://direct.francemusique.fr/live/francemusiquelevenementiellehifi.mp3',\n'http://fhr-chari-live.cast.addradio.de/fhr/chari/live/mp3/128/stream.mp3',\n'http://generations-la-fouine.ice.infomaniak.ch/generations-la-fouine.mp3',\n'http://hr-hrinfo-live.cast.addradio.de/hr/hrinfo/live/mp3/128/stream.mp3',\n'http://nostalgiewafnewwave.ice.infomaniak.ch/nostalgiewafnewwave-128.mp3',\n'http://swr-swr-raka04.cast.addradio.de/swr/swr/raka04/mp3/128/stream.mp3',\n'http://swr-swr-raka10.cast.addradio.de/swr/swr/raka10/mp3/128/stream.mp3',\n'http://swr-swr-raka11.cast.addradio.de/swr/swr/raka11/mp3/128/stream.mp3',\n'http://swr-swr-raka12.cast.addradio.de/swr/swr/raka12/mp3/128/stream.mp3',\n'http://wdr-1live-diggi.icecast.wdr.de/wdr/1live/diggi/mp3/128/stream.mp3',\n'http://wdr-1live-fiehe.icecast.wdr.de/wdr/1live/fiehe/mp3/128/stream.mp3',\n'http://wdr-1live-planb.icecast.wdr.de/wdr/1live/planb/mp3/128/stream.mp3',\n'http://wdr-kiraka-live.icecast.wdr.de/wdr/kiraka/live/mp3/128/stream.mp3',\n'https://wdr-vera-live.icecastssl.wdr.de/wdr/vera/live/mp3/128/stream.mp3',\n'https://wdr-wdr3-live.icecastssl.wdr.de/wdr/wdr3/live/mp3/128/stream.mp3',\n'https://wdr-wdr3-live.icecastssl.wdr.de/wdr/wdr3/live/mp3/256/stream.mp3',\n'https://wdr-wdr4-live.icecastssl.wdr.de/wdr/wdr4/live/mp3/128/stream.mp3',\n'https://wdr-wdr5-live.icecastssl.wdr.de/wdr/wdr5/live/mp3/128/stream.mp3',\n'https://wdr-wdr-event.icecastssl.wdr.de/wdr/wdr/event/mp3/128/stream.mp3',\n'http://br-br1-schwaben.cast.addradio.de/br/br1/schwaben/mp3/56/stream.mp3',\n'http://dieneue1077.cast.addradio.de/dieneue1077/simulcast/high/stream.mp3',\n'http://radiobochum.cast.addradio.de/radiobochum/simulcast/high/stream.mp3',\n'http://stream.rockland-digital.de/rockland/mp3-128/Radioplayer/stream.mp3',\n'https://d3pvma9xb2775h.cloudfront.net/icecast/omropfryslan/tomkeradio.mp3',\n'https://pdodswr-a.akamaihd.net/dasding/spezialsendungen/alle-farben.m.mp3',\n'https://playerservices.streamtheworld.com/api/livestream-redirect/JOE.mp3',\n'http://br-br1-schwaben.cast.addradio.de/br/br1/schwaben/mp3/128/stream.mp3',\n'http://catinform.ccma.audioemotion.stream.flumotion.com/ccma/catinform.mp3',\n'http://catmusica.ccma.audioemotion.stream.flumotion.com/ccma/catmusica.mp3',\n'http://dieneue1077.cast.addradio.de/dieneue1077/modernrock/high/stream.mp3',\n'http://frequenceplusandenne.ice.infomaniak.ch/frequenceplusandenne-192.mp3',\n'http://mp3ad.radiob2andreaberg.c.nmdn.net/radiob2andreaberg/livestream.mp3',\n'http://mp3ad.radiob2volksmusik.c.nmdn.net/radiob2volksmusik/livestream.mp3',\n'http://progressive-audio.lwc.vrtcdn.be/content/fixed/11_11niws-snip_hi.mp3',\n'http://wdr-1live-hiphop.icecast.wdr.de/wdr/1live/hiphop/mp3/128/stream.mp3',\n'https://playerservices.streamtheworld.com/api/livestream-redirect/KINK.mp3',\n'https://wdr-1live-live.icecastssl.wdr.de/wdr/1live/live/mp3/128/stream.mp3',\n'https://wdr-cosmo-live.icecastssl.wdr.de/wdr/cosmo/live/mp3/128/stream.mp3',\n'http://br-brheimat-live.cast.addradio.de/br/brheimat/live/mp3/56/stream.mp3',\n'http://dieneuewelle.cast.addradio.de/dieneuewelle/simulcast/high/stream.mp3',\n'http://generationfm-slowjam.ice.infomaniak.ch/generationfm-slowjam-high.mp3',\n'http://generations-caraibes.ice.infomaniak.ch/generations-caraibes-high.mp3',\n'http://progressive-audio.lwc.vrtcdn.be/content/fixed/11_11niws-snip_mid.mp3',\n'https://streaming-medialaan-cdp.triple-it.nl/Qmusic_be_workalicious_128.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/RADIO10.mp3',\n'http://br-brheimat-live.cast.addradio.de/br/brheimat/live/mp3/128/stream.mp3',\n'http://direct.francemusique.fr/live/francemusiqueconcertsradiofrancehifi.mp3',\n'http://mp3ad.radiob2deutsch-pop.c.nmdn.net/radiob2deutsch-pop/livestream.mp3',\n'http://mp3ad.radiob2ostschlager.c.nmdn.net/radiob2ostschlager/livestream.mp3',\n'http://nostalgiewhatafeeling.ice.infomaniak.ch/nostalgiewhatafeeling-128.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/QHOTNOW.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/QSUMMER.mp3',\n'http://radioklassikstephansdom.ice.infomaniak.ch/radioklassikstephansdom.mp3',\n'http://wdr-cosmo-coslive.icecast.wdr.de/wdr/cosmo/coslive/mp3/128/stream.mp3',\n'https://playerservices.streamtheworld.com/api/livestream-redirect/QMUSIC.mp3',\n'https://wdr-1live-diggi.icecastssl.wdr.de/wdr/1live/diggi/mp3/128/stream.mp3',\n'https://wdr-1live-fiehe.icecastssl.wdr.de/wdr/1live/fiehe/mp3/128/stream.mp3',\n'https://wdr-1live-planb.icecastssl.wdr.de/wdr/1live/planb/mp3/128/stream.mp3',\n'https://wdr-kiraka-live.icecastssl.wdr.de/wdr/kiraka/live/mp3/128/stream.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR03.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR04.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR05.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR06.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR07.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR10.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR11.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR12.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR13.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR14.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/SRGSTR15.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR04.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR12.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR14.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR15.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR18.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR20.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR22.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR23.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR24.mp3',\n'http://alternativefm.cast.addradio.de/alternativefm/simulcast/high/stream.mp3',\n'http://br-b5aktuell-live.cast.addradio.de/br/b5aktuell/live/mp3/56/stream.mp3',\n'http://br-brklassik-live.cast.addradio.de/br/brklassik/live/mp3/56/stream.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/TLPSTR17.mp3',\n'http://radioduisburg.cast.addradio.de/radioduisburg/simulcast/high/stream.mp3',\n'http://radiomuelheim.cast.addradio.de/radiomuelheim/simulcast/high/stream.mp3',\n'http:/mp3ad.radiob2schlagermixx.c.nmdn.net/radiob2schlagermixx/livestream.mp3',\n'https://playerservices.streamtheworld.com/api/livestream-redirect/JOE_90S.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/WEB05_MP3.mp3',\n'http://br-b5aktuell-live.cast.addradio.de/br/b5aktuell/live/mp3/128/stream.mp3',\n'http://br-brklassik-live.cast.addradio.de/br/brklassik/live/mp3/128/stream.mp3',\n'http://mp3ad.radiob2kultschlager.c.nmdn.net/radiob2kultschlager/livestream.mp3',\n'http://mp3ad.radiob2rolandkaiser.c.nmdn.net/radiob2rolandkaiser/livestream.mp3',\n'http://nostalgiewaflagelanden.ice.infomaniak.ch/nostalgiewaflagelanden-128.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/JOE_THEME.mp3',\n'http://wdr-1live-specials.icecast.wdr.de/wdr/1live/specials/mp3/128/stream.mp3',\n'http://wdr-cosmo-selektor.icecast.wdr.de/wdr/cosmo/selektor/mp3/128/stream.mp3',\n'http://wdr-wdr2-rheinland.icecast.wdr.de/wdr/wdr2/rheinland/mp3/128/stream.mp3',\n'http://wdr-wdr2-rheinruhr.icecast.wdr.de/wdr/wdr2/rheinruhr/mp3/128/stream.mp3',\n'https://playerservices.streamtheworld.com/api/livestream-redirect/JOE_EASY.mp3',\n'https://playerservices.streamtheworld.com/api/livestream-redirect/KINK_DNA.mp3',\n'https://wdr-1live-hiphop.icecastssl.wdr.de/wdr/1live/hiphop/mp3/128/stream.mp3',\n'http://br-bayernplus-live.cast.addradio.de/br/bayernplus/live/mp3/56/stream.mp3',\n'http://br-br1-mainfranken.cast.addradio.de/br/br1/mainfranken/mp3/56/stream.mp3',\n'http://mp3.radiogalaxykempten.c.nmdn.net/ps-radiogalaxykempten/hqlivestream.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/CADENADIAL.mp3',\n'http://radiosauerland.cast.addradio.de/radiosauerland/simulcast/high/stream.mp3',\n'http://rb-bremeneins-live.cast.addradio.de/rb/bremeneins/live/mp3/64/stream.mp3',\n'http://rb-bremennext-live.cast.addradio.de/rb/bremennext/live/mp3/64/stream.mp3',\n'http://rb-bremenvier-live.cast.addradio.de/rb/bremenvier/live/mp3/64/stream.mp3',\n'http://rb-bremenzwei-live.cast.addradio.de/rb/bremenzwei/live/mp3/64/stream.mp3',\n'http://br-bayernplus-live.cast.addradio.de/br/bayernplus/live/mp3/128/stream.mp3',\n'http://br-br1-mainfranken.cast.addradio.de/br/br1/mainfranken/mp3/128/stream.mp3',\n'http://mp3ad.radiob2helenefischer.c.nmdn.net/radiob2helenefischer/livestream.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/QFOUTERADIO.mp3',\n'http://rb-bremeneins-live.cast.addradio.de/rb/bremeneins/live/mp3/128/stream.mp3',\n'http://rb-bremennext-live.cast.addradio.de/rb/bremennext/live/mp3/128/stream.mp3',\n'http://rb-bremenvier-live.cast.addradio.de/rb/bremenvier/live/mp3/128/stream.mp3',\n'http://rb-bremenzwei-live.cast.addradio.de/rb/bremenzwei/live/mp3/128/stream.mp3',\n'http://wdr-1live-djsession.icecast.wdr.de/wdr/1live/djsession/mp3/128/stream.mp3',\n'http://wdr-wdr2-ruhrgebiet.icecast.wdr.de/wdr/wdr2/ruhrgebiet/mp3/128/stream.mp3',\n'https://wdr-cosmo-coslive.icecastssl.wdr.de/wdr/cosmo/coslive/mp3/128/stream.mp3',\n'http://mp3ad.galaxyaschaffenburg.c.nmdn.net/fs_galaxyaschaffenburg/livestream.mp3',\n'http://mp3ad.radiogalaxylandshut.c.nmdn.net/ps-radiogalaxylandshut/livestream.mp3',\n'http://playerservices.streamtheworld.com/api/livestream-redirect/QMAXIMUMHITS.mp3',\n'http://radiooberhausen.cast.addradio.de/radiooberhausen/simulcast/high/stream.mp3',\n'http://statslive.infomaniak.ch/playlist/frequenceeghezee/frequenceeghezee-128.mp3/playlist.m3u',\n'http://albert.antfarm.co.za/springbok/springbok.stream/media_w2099692814_14423.mp3',\n'https://wdr-1live-specials.icecastssl.wdr.de/wdr/1live/specials/mp3/128/stream.mp3',\n'https://wdr-cosmo-selektor.icecastssl.wdr.de/wdr/cosmo/selektor/mp3/128/stream.mp3',\n'https://wdr-wdr2-rheinland.icecastssl.wdr.de/wdr/wdr2/rheinland/mp3/128/stream.mp3',\n'https://wdr-wdr2-rheinruhr.icecastssl.wdr.de/wdr/wdr2/rheinruhr/mp3/128/stream.mp3',\n'http://generationfm-underground.ice.infomaniak.ch/generationfm-underground-high.mp3',\n'http://rbb-radioberlin-live.cast.addradio.de/rbb/radioberlin/live/mp3/48/stream.mp3',\n'http://xapp2450489345c1000321-f-l.i.farm.core.cdn.streamfarm.net/radio_886/128k.mp3',\n'https://c14000-l.i.core.cdn.streamfarm.net/14000cina/live/2908erfpop/live_de_96.mp3',\n'https://c14000-l.i.core.cdn.streamfarm.net/14000cina/live/3212erf_96/live_de_96.mp3',\n'http://rbb-radioberlin-live.cast.addradio.de/rbb/radioberlin/live/mp3/128/stream.mp3',\n'http://wdr-wdr2-muensterland.icecast.wdr.de/wdr/wdr2/muensterland/mp3/128/stream.mp3',\n'https://wdr-1live-djsession.icecastssl.wdr.de/wdr/1live/djsession/mp3/128/stream.mp3',\n'https://wdr-wdr2-ruhrgebiet.icecastssl.wdr.de/wdr/wdr2/ruhrgebiet/mp3/128/stream.mp3',\n'http://deinfussballradio.cast.addradio.de/deinfussballradio/simulcast/high/stream.mp3',\n'http://radioemscherlippe.cast.addradio.de/radioemscherlippe/simulcast/high/stream.mp3',\n'http://wdr-wdr2-suedwestfalen.icecast.wdr.de/wdr/wdr2/suedwestfalen/mp3/128/stream.mp3',\n'http://wdr-cosmo-alsautalarabi.icecast.wdr.de/wdr/cosmo/alsautalarabi/mp3/128/stream.mp3',\n'http://wdr-cosmo-popolskuevent.icecast.wdr.de/wdr/cosmo/popolskuevent/mp3/128/stream.mp3',\n'http://wdr-cosmo-porusskievent.icecast.wdr.de/wdr/cosmo/porusskievent/mp3/128/stream.mp3',\n'https://wdr-wdr2-muensterland.icecastssl.wdr.de/wdr/wdr2/muensterland/mp3/128/stream.mp3',\n'http://wdr-wdr2-aachenundregion.icecast.wdr.de/wdr/wdr2/aachenundregion/mp3/128/stream.mp3',\n'http://statslive.infomaniak.com/playlist/frequenceplusandenne/frequenceplusandenne-192.mp3/playlist.m3u',\n'https://wdr-wdr2-suedwestfalen.icecastssl.wdr.de/wdr/wdr2/suedwestfalen/mp3/128/stream.mp3',\n'http://xapp2450489345c1000321-f-l.i.farm.core.cdn.streamfarm.net/radio_886_die80er/128k.mp3',\n'https://wdr-cosmo-alsautalarabi.icecastssl.wdr.de/wdr/cosmo/alsautalarabi/mp3/128/stream.mp3',\n'https://wdr-cosmo-popolskuevent.icecastssl.wdr.de/wdr/cosmo/popolskuevent/mp3/128/stream.mp3',\n'https://wdr-cosmo-porusskievent.icecastssl.wdr.de/wdr/cosmo/porusskievent/mp3/128/stream.mp3',\n'https://wdr-wdr2-bergischesland.icecastssl.wdr.de/wdr/wdr2/bergischesland/mp3/128/stream.mp3',\n'https://wdr-wdr2-aachenundregion.icecastssl.wdr.de/wdr/wdr2/aachenundregion/mp3/128/stream.mp3',\n'http://wdr-1live-neufuerdensektor.icecast.wdr.de/wdr/1live/neufuerdensektor/mp3/128/stream.mp3',\n'http://wdr-wdr2-ostwestfalenlippe.icecast.wdr.de/wdr/wdr2/ostwestfalenlippe/mp3/128/stream.mp3',\n'http://xapp2450489345c1000321-f-l.i.farm.core.cdn.streamfarm.net/radio_886_classicRock/128k.mp3',\n'http://xapp2450489345c1000321-f-l.i.farm.core.cdn.streamfarm.net/radio_886_rockChannel/128k.mp3',\n'http://rbb-antennebrandenburg-live.cast.addradio.de/rbb/antennebrandenburg/live/mp3/128/stream.mp3',\n'https://wdr-1live-neufuerdensektor.icecastssl.wdr.de/wdr/1live/neufuerdensektor/mp3/128/stream.mp3',\n'https://wdr-wdr2-ostwestfalenlippe.icecastssl.wdr.de/wdr/wdr2/ostwestfalenlippe/mp3/128/stream.mp3',\n'https://rbb-antennebrandenburg-live.sslcast.addradio.de/rbb/antennebrandenburg/live/mp3/128/stream.mp3',\n'http://ndr-ndr1niedersachsen-hannover.cast.addradio.de/ndr/ndr1niedersachsen/hannover/mp3/128/stream.mp3',\n'http://wdr-cosmo-estacionsurradiocolonia.icecast.wdr.de/wdr/cosmo/estacionsurradiocolonia/mp3/128/stream.mp3',\n'http://wdr-cosmo-estacionsurradiocolonia.icecast.wdr.de/wdr/cosmo/estacionsurradiocolonia/mp3/128/stream.mp3',\n'http://wdr-cosmo-bernamakurdikoelnradyosu.icecast.wdr.de/wdr/cosmo/bernamakurdikoelnradyosu/mp3/128/stream.mp3',\n'http://wdr-cosmo-bernamakurdikoelnradyosu.icecast.wdr.de/wdr/cosmo/bernamakurdikoelnradyosu/mp3/128/stream.mp3',\n'http://domradio-mp3-m.akacast.akamaistream.net/7/148/237368/v1/gnl.akacast.akamaistream.net/domradio-mp3-m?.mp3',\n'https://wdr-cosmo-estacionsurradiocolonia.icecastssl.wdr.de/wdr/cosmo/estacionsurradiocolonia/mp3/128/stream.mp3',\n'https://wdr-cosmo-estacionsurradiocolonia.icecastssl.wdr.de/wdr/cosmo/estacionsurradiocolonia/mp3/128/stream.mp3',\n'http://wdr-cosmo-ellinikorandevouradioforum.icecast.wdr.de/wdr/cosmo/ellinikorandevouradioforum/mp3/128/stream.mp3',\n'http://wdr-cosmo-ellinikorandevouradioforum.icecast.wdr.de/wdr/cosmo/ellinikorandevouradioforum/mp3/128/stream.mp3',\n'https://wdr-cosmo-bernamakurdikoelnradyosu.icecastssl.wdr.de/wdr/cosmo/bernamakurdikoelnradyosu/mp3/128/stream.mp3',\n'https://wdr-cosmo-bernamakurdikoelnradyosu.icecastssl.wdr.de/wdr/cosmo/bernamakurdikoelnradyosu/mp3/128/stream.mp3',\n'https://wdr-cosmo-ellinikorandevouradioforum.icecastssl.wdr.de/wdr/cosmo/ellinikorandevouradioforum/mp3/128/stream.mp3',\n'https://wdr-cosmo-ellinikorandevouradioforum.icecastssl.wdr.de/wdr/cosmo/ellinikorandevouradioforum/mp3/128/stream.mp3',\n\n];\n\nvar randomItem = myArray[Math.floor(Math.random()*myArray.length)];\n\nmsg.url = randomItem;\nmsg.contentType = \"audio/m3u\"\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1640,
+        "y": 1120,
+        "wires": [
+            [
+                "1937770f.8ab299"
+            ]
+        ]
+    },
+    {
+        "id": "44047199.ef358",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Title",
+        "url": "",
+        "contentType": "",
+        "message": "",
+        "language": "en",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 1610,
+        "y": 1020,
+        "wires": [
+            [
+                "b857f1bc.b0dcc"
+            ]
+        ]
+    },
+    {
+        "id": "da62bc9e.ae9b3",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "De boven buttons zijn geactiveerd en I ga nu een willekeurige radio zender spelen",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "language",
+                "pt": "msg",
+                "to": "nl-BE",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1620,
+        "y": 980,
+        "wires": [
+            [
+                "44047199.ef358"
+            ]
+        ]
+    },
+    {
+        "id": "1937770f.8ab299",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Radio",
+        "url": "",
+        "contentType": "",
+        "message": "",
+        "language": "en",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 1610,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b857f1bc.b0dcc",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "6",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1620,
+        "y": 1080,
+        "wires": [
+            [
+                "78313f04.49ed"
+            ]
+        ]
+    },
+    {
+        "id": "18c4a1af.d39b9e",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Debounce",
+        "info": "to solve the prblem of a multiople calculation.  needed for the top lights to work and radio",
+        "x": 1460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "866d0f0e.541b7",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Random ",
+        "info": "Stations must be mp3",
+        "x": 1620,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "bb01ef47.226f9",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Jingle",
+        "url": "http://www.keays.nl/jingle-Aristona.mp3",
+        "contentType": "audia/mp3",
+        "message": "",
+        "language": "en",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 1370,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29ec8756.ba41f8",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "On Shutdown",
+        "info": "",
+        "x": 1370,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "3bc42e85.df01a2",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "blue",
+        "info": "",
+        "x": 970,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "6b8f8c3f.6abbd4",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Yellow",
+        "info": "",
+        "x": 750,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "53c90532.b5121c",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Red",
+        "info": "",
+        "x": 530,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "2338bb7.7d6ef44",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Green",
+        "info": "",
+        "x": 310,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "fb5990e7.637f",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "White",
+        "info": "",
+        "x": 90,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "46470f2b.6ea89",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "(white)",
+        "info": "",
+        "x": 2050,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "1e36b1c6.efb5ee",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Aqua",
+        "info": "",
+        "x": 1830,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "9219f195.3eac9",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Violet",
+        "info": "",
+        "x": 1610,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "152d7532.efb92b",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "On",
+        "info": "",
+        "x": 1430,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "7d0e37f4.f8d358",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Off",
+        "info": "",
+        "x": 1330,
+        "y": 900,
+        "wires": [],
+        "icon": "node-red-contrib-cast/cast-cli1.svg"
+    },
+    {
+        "id": "4b21dd8e.1a6524",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "LOWER BUTTONS",
+        "info": "",
+        "x": 130,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "d9f1bc2f.630b9",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "TOP BUTTONS",
+        "info": "",
+        "x": 1360,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "dd233aa9.4481a8",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Activates Top Buttons",
+        "info": "",
+        "x": 140,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "719378c.296d288",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Title",
+        "url": "",
+        "contentType": "",
+        "message": "",
+        "language": "",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 1830,
+        "y": 1040,
+        "wires": [
+            [
+                "7aa389eb.5a1b18"
+            ]
+        ]
+    },
+    {
+        "id": "80d0244d.91f3d8",
+        "type": "change",
+        "z": "eb587436.45cf68",
+        "name": "Params",
+        "rules": [
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "Top Buttons Activated. I will now play radio Nostalgia",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "language",
+                "pt": "msg",
+                "to": "it-IT",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1840,
+        "y": 980,
+        "wires": [
+            [
+                "719378c.296d288"
+            ]
+        ]
+    },
+    {
+        "id": "f19b512.92b06b",
+        "type": "cast-to-client",
+        "z": "eb587436.45cf68",
+        "name": "Radio",
+        "url": "http://192.173.28.41/MAG_SC",
+        "contentType": "audio/mp3",
+        "message": "",
+        "language": "de",
+        "ip": "192.168.86.250",
+        "port": "8009",
+        "volume": "",
+        "x": 1830,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7aa389eb.5a1b18",
+        "type": "delay",
+        "z": "eb587436.45cf68",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "4.5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1850,
+        "y": 1100,
+        "wires": [
+            [
+                "f19b512.92b06b"
+            ]
+        ]
+    },
+    {
+        "id": "193a494b.21a357",
+        "type": "comment",
+        "z": "eb587436.45cf68",
+        "name": "Eritrean Music",
+        "info": "",
+        "x": 550,
+        "y": 940,
+        "wires": []
+    }
+]
